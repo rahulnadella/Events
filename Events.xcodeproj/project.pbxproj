@@ -14,7 +14,7 @@
 		FCCAD6B71AF00CD400747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B61AF00CD400747332 /* Images.xcassets */; };
 		FCCAD6BA1AF00CD400747332 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B81AF00CD400747332 /* LaunchScreen.xib */; };
 		FCCAD6C61AF00CD400747332 /* EventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6C51AF00CD400747332 /* EventsTests.m */; };
-		FCCAD6DA1AF010DB00747332 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6D91AF010DB00747332 /* InterfaceController.m */; };
+		FCCAD6DA1AF010DB00747332 /* HomeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6D91AF010DB00747332 /* HomeInterfaceController.m */; };
 		FCCAD6DD1AF010DB00747332 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6DC1AF010DB00747332 /* NotificationController.m */; };
 		FCCAD6E01AF010DB00747332 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6DF1AF010DB00747332 /* GlanceController.m */; };
 		FCCAD6E21AF010DB00747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6E11AF010DB00747332 /* Images.xcassets */; };
@@ -22,6 +22,8 @@
 		FCCAD6EE1AF010DB00747332 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EC1AF010DB00747332 /* Interface.storyboard */; };
 		FCCAD6F01AF010DB00747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EF1AF010DB00747332 /* Images.xcassets */; };
 		FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FCCAD6FD1AF0153000747332 /* OrdinaryEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */; };
+		FCCAD7001AF0154F00747332 /* ImportantEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +81,8 @@
 		FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Events WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCAD6D61AF010DB00747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6D71AF010DB00747332 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		FCCAD6D81AF010DB00747332 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		FCCAD6D91AF010DB00747332 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		FCCAD6D81AF010DB00747332 /* HomeInterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInterfaceController.h; sourceTree = "<group>"; };
+		FCCAD6D91AF010DB00747332 /* HomeInterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInterfaceController.m; sourceTree = "<group>"; };
 		FCCAD6DB1AF010DB00747332 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
 		FCCAD6DC1AF010DB00747332 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		FCCAD6DE1AF010DB00747332 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
@@ -90,6 +92,10 @@
 		FCCAD6EB1AF010DB00747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6ED1AF010DB00747332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FCCAD6EF1AF010DB00747332 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FCCAD6FB1AF0153000747332 /* OrdinaryEventRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdinaryEventRow.h; sourceTree = "<group>"; };
+		FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdinaryEventRow.m; sourceTree = "<group>"; };
+		FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportantEventRow.h; sourceTree = "<group>"; };
+		FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportantEventRow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,14 +189,18 @@
 		FCCAD6D41AF010DB00747332 /* Events WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FCCAD6D81AF010DB00747332 /* InterfaceController.h */,
-				FCCAD6D91AF010DB00747332 /* InterfaceController.m */,
+				FCCAD6D81AF010DB00747332 /* HomeInterfaceController.h */,
+				FCCAD6D91AF010DB00747332 /* HomeInterfaceController.m */,
 				FCCAD6DB1AF010DB00747332 /* NotificationController.h */,
 				FCCAD6DC1AF010DB00747332 /* NotificationController.m */,
 				FCCAD6DE1AF010DB00747332 /* GlanceController.h */,
 				FCCAD6DF1AF010DB00747332 /* GlanceController.m */,
 				FCCAD6E11AF010DB00747332 /* Images.xcassets */,
 				FCCAD6D51AF010DB00747332 /* Supporting Files */,
+				FCCAD6FB1AF0153000747332 /* OrdinaryEventRow.h */,
+				FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */,
+				FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */,
+				FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */,
 			);
 			path = "Events WatchKit Extension";
 			sourceTree = "<group>";
@@ -402,8 +412,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCAD6DD1AF010DB00747332 /* NotificationController.m in Sources */,
-				FCCAD6DA1AF010DB00747332 /* InterfaceController.m in Sources */,
+				FCCAD6DA1AF010DB00747332 /* HomeInterfaceController.m in Sources */,
 				FCCAD6E01AF010DB00747332 /* GlanceController.m in Sources */,
+				FCCAD7001AF0154F00747332 /* ImportantEventRow.m in Sources */,
+				FCCAD6FD1AF0153000747332 /* OrdinaryEventRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

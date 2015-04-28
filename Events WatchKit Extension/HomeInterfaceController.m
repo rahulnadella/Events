@@ -6,15 +6,15 @@
 //  Copyright (c) 2015 Rahul Nadella. All rights reserved.
 //
 
-#import "InterfaceController.h"
+#import "HomeInterfaceController.h"
 
 
-@interface InterfaceController()
+@interface HomeInterfaceController()
 
 @end
 
 
-@implementation InterfaceController
+@implementation HomeInterfaceController
 
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];

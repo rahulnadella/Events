@@ -24,7 +24,7 @@
                                         </items>
                                     </group>
                                     <connections>
-                                        <outlet property="timerLabel" destination="aUl-ad-bCe" id="3JT-Te-RVv"/>
+                                        <outlet property="timeLabel" destination="aUl-ad-bCe" id="NTL-H0-fjR"/>
                                         <outlet property="titleLabel" destination="LV9-Kf-GNZ" id="0w0-Du-C53"/>
                                     </connections>
                                 </tableRow>
@@ -47,13 +47,16 @@
                                     </group>
                                     <connections>
                                         <outlet property="eventImage" destination="9Xt-82-Mza" id="zXq-Wd-Y5p"/>
-                                        <outlet property="timerLabel" destination="VHf-p8-yXh" id="yie-qs-4Ch"/>
+                                        <outlet property="timeLabel" destination="VHf-p8-yXh" id="XHO-UY-5Iv"/>
                                         <outlet property="titleLabel" destination="zOm-7G-54D" id="9J7-KB-uZt"/>
                                     </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="tableView" destination="fnS-TW-oZj" id="Ej7-yA-rer"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>

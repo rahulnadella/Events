@@ -12,6 +12,6 @@
 @interface OrdinaryEventRow : NSObject
 
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *titleLabel;
-@property (nonatomic, weak) IBOutlet WKInterfaceLabel *timerLabel;
+@property (nonatomic, weak) IBOutlet WKInterfaceLabel *timeLabel;
 
 @end

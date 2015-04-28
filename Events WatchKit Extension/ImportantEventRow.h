@@ -12,7 +12,7 @@
 @interface ImportantEventRow : NSObject
 
 @property (nonatomic, strong) IBOutlet WKInterfaceLabel *titleLabel;
-@property (nonatomic, strong) IBOutlet WKInterfaceLabel *timerLabel;
+@property (nonatomic, strong) IBOutlet WKInterfaceLabel *timeLabel;
 @property (nonatomic, strong) IBOutlet WKInterfaceImage *eventImage;
 
 @end

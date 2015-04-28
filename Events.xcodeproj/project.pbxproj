@@ -14,6 +14,14 @@
 		FCCAD6B71AF00CD400747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B61AF00CD400747332 /* Images.xcassets */; };
 		FCCAD6BA1AF00CD400747332 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B81AF00CD400747332 /* LaunchScreen.xib */; };
 		FCCAD6C61AF00CD400747332 /* EventsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6C51AF00CD400747332 /* EventsTests.m */; };
+		FCCAD6DA1AF010DB00747332 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6D91AF010DB00747332 /* InterfaceController.m */; };
+		FCCAD6DD1AF010DB00747332 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6DC1AF010DB00747332 /* NotificationController.m */; };
+		FCCAD6E01AF010DB00747332 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6DF1AF010DB00747332 /* GlanceController.m */; };
+		FCCAD6E21AF010DB00747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6E11AF010DB00747332 /* Images.xcassets */; };
+		FCCAD6E61AF010DB00747332 /* Events WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6E51AF010DB00747332 /* Events WatchKit App.app */; };
+		FCCAD6EE1AF010DB00747332 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EC1AF010DB00747332 /* Interface.storyboard */; };
+		FCCAD6F01AF010DB00747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EF1AF010DB00747332 /* Images.xcassets */; };
+		FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +32,35 @@
 			remoteGlobalIDString = FCCAD6A51AF00CD300747332;
 			remoteInfo = Events;
 		};
+		FCCAD6E71AF010DB00747332 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCCAD69E1AF00CD300747332 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCCAD6E41AF010DB00747332;
+			remoteInfo = "Events WatchKit App";
+		};
+		FCCAD6F11AF010DB00747332 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCCAD69E1AF00CD300747332 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCCAD6D21AF010DB00747332;
+			remoteInfo = "Events WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FCCAD6FA1AF010DB00747332 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FCCAD6A61AF00CD400747332 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +76,20 @@
 		FCCAD6BF1AF00CD400747332 /* EventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCAD6C41AF00CD400747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6C51AF00CD400747332 /* EventsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventsTests.m; sourceTree = "<group>"; };
+		FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Events WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCCAD6D61AF010DB00747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCCAD6D71AF010DB00747332 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		FCCAD6D81AF010DB00747332 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		FCCAD6D91AF010DB00747332 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		FCCAD6DB1AF010DB00747332 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		FCCAD6DC1AF010DB00747332 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		FCCAD6DE1AF010DB00747332 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		FCCAD6DF1AF010DB00747332 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		FCCAD6E11AF010DB00747332 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FCCAD6E51AF010DB00747332 /* Events WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Events WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCCAD6EB1AF010DB00747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCCAD6ED1AF010DB00747332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FCCAD6EF1AF010DB00747332 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +107,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCCAD6D01AF010DB00747332 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +122,8 @@
 			children = (
 				FCCAD6A81AF00CD400747332 /* Events */,
 				FCCAD6C21AF00CD400747332 /* EventsTests */,
+				FCCAD6D41AF010DB00747332 /* Events WatchKit Extension */,
+				FCCAD6E91AF010DB00747332 /* Events WatchKit App */,
 				FCCAD6A71AF00CD400747332 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +133,8 @@
 			children = (
 				FCCAD6A61AF00CD400747332 /* Events.app */,
 				FCCAD6BF1AF00CD400747332 /* EventsTests.xctest */,
+				FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */,
+				FCCAD6E51AF010DB00747332 /* Events WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +180,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FCCAD6D41AF010DB00747332 /* Events WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FCCAD6D81AF010DB00747332 /* InterfaceController.h */,
+				FCCAD6D91AF010DB00747332 /* InterfaceController.m */,
+				FCCAD6DB1AF010DB00747332 /* NotificationController.h */,
+				FCCAD6DC1AF010DB00747332 /* NotificationController.m */,
+				FCCAD6DE1AF010DB00747332 /* GlanceController.h */,
+				FCCAD6DF1AF010DB00747332 /* GlanceController.m */,
+				FCCAD6E11AF010DB00747332 /* Images.xcassets */,
+				FCCAD6D51AF010DB00747332 /* Supporting Files */,
+			);
+			path = "Events WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		FCCAD6D51AF010DB00747332 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCCAD6D61AF010DB00747332 /* Info.plist */,
+				FCCAD6D71AF010DB00747332 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCCAD6E91AF010DB00747332 /* Events WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FCCAD6EC1AF010DB00747332 /* Interface.storyboard */,
+				FCCAD6EF1AF010DB00747332 /* Images.xcassets */,
+				FCCAD6EA1AF010DB00747332 /* Supporting Files */,
+			);
+			path = "Events WatchKit App";
+			sourceTree = "<group>";
+		};
+		FCCAD6EA1AF010DB00747332 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCCAD6EB1AF010DB00747332 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,10 +232,12 @@
 				FCCAD6A21AF00CD300747332 /* Sources */,
 				FCCAD6A31AF00CD300747332 /* Frameworks */,
 				FCCAD6A41AF00CD300747332 /* Resources */,
+				FCCAD6FA1AF010DB00747332 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FCCAD6F21AF010DB00747332 /* PBXTargetDependency */,
 			);
 			name = Events;
 			productName = Events;
@@ -157,6 +262,39 @@
 			productReference = FCCAD6BF1AF00CD400747332 /* EventsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		FCCAD6D21AF010DB00747332 /* Events WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCCAD6F71AF010DB00747332 /* Build configuration list for PBXNativeTarget "Events WatchKit Extension" */;
+			buildPhases = (
+				FCCAD6CF1AF010DB00747332 /* Sources */,
+				FCCAD6D01AF010DB00747332 /* Frameworks */,
+				FCCAD6D11AF010DB00747332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCCAD6E81AF010DB00747332 /* PBXTargetDependency */,
+			);
+			name = "Events WatchKit Extension";
+			productName = "Events WatchKit Extension";
+			productReference = FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		FCCAD6E41AF010DB00747332 /* Events WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCCAD6F41AF010DB00747332 /* Build configuration list for PBXNativeTarget "Events WatchKit App" */;
+			buildPhases = (
+				FCCAD6E31AF010DB00747332 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Events WatchKit App";
+			productName = "Events WatchKit App";
+			productReference = FCCAD6E51AF010DB00747332 /* Events WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +310,12 @@
 					FCCAD6BE1AF00CD400747332 = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = FCCAD6A51AF00CD300747332;
+					};
+					FCCAD6D21AF010DB00747332 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FCCAD6E41AF010DB00747332 = {
+						CreatedOnToolsVersion = 6.2;
 					};
 				};
 			};
@@ -190,6 +334,8 @@
 			targets = (
 				FCCAD6A51AF00CD300747332 /* Events */,
 				FCCAD6BE1AF00CD400747332 /* EventsTests */,
+				FCCAD6D21AF010DB00747332 /* Events WatchKit Extension */,
+				FCCAD6E41AF010DB00747332 /* Events WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +355,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCAD6D11AF010DB00747332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCAD6E21AF010DB00747332 /* Images.xcassets in Resources */,
+				FCCAD6E61AF010DB00747332 /* Events WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCAD6E31AF010DB00747332 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCAD6EE1AF010DB00747332 /* Interface.storyboard in Resources */,
+				FCCAD6F01AF010DB00747332 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +397,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCCAD6CF1AF010DB00747332 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCCAD6DD1AF010DB00747332 /* NotificationController.m in Sources */,
+				FCCAD6DA1AF010DB00747332 /* InterfaceController.m in Sources */,
+				FCCAD6E01AF010DB00747332 /* GlanceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +414,16 @@
 			isa = PBXTargetDependency;
 			target = FCCAD6A51AF00CD300747332 /* Events */;
 			targetProxy = FCCAD6C01AF00CD400747332 /* PBXContainerItemProxy */;
+		};
+		FCCAD6E81AF010DB00747332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCCAD6E41AF010DB00747332 /* Events WatchKit App */;
+			targetProxy = FCCAD6E71AF010DB00747332 /* PBXContainerItemProxy */;
+		};
+		FCCAD6F21AF010DB00747332 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCCAD6D21AF010DB00747332 /* Events WatchKit Extension */;
+			targetProxy = FCCAD6F11AF010DB00747332 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -258,6 +442,14 @@
 				FCCAD6B91AF00CD400747332 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		FCCAD6EC1AF010DB00747332 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCCAD6ED1AF010DB00747332 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -393,6 +585,60 @@
 			};
 			name = Release;
 		};
+		FCCAD6F51AF010DB00747332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Events_WatchKit_Extension;
+				INFOPLIST_FILE = "Events WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		FCCAD6F61AF010DB00747332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Events_WatchKit_Extension;
+				INFOPLIST_FILE = "Events WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		FCCAD6F81AF010DB00747332 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Events WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FCCAD6F91AF010DB00747332 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Events WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -418,6 +664,22 @@
 			buildConfigurations = (
 				FCCAD6CD1AF00CD400747332 /* Debug */,
 				FCCAD6CE1AF00CD400747332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCCAD6F41AF010DB00747332 /* Build configuration list for PBXNativeTarget "Events WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCCAD6F51AF010DB00747332 /* Debug */,
+				FCCAD6F61AF010DB00747332 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCCAD6F71AF010DB00747332 /* Build configuration list for PBXNativeTarget "Events WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCCAD6F81AF010DB00747332 /* Debug */,
+				FCCAD6F91AF010DB00747332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

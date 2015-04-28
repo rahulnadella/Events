@@ -194,21 +194,20 @@
 		FCCAD6D41AF010DB00747332 /* Events WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FCCAD6D81AF010DB00747332 /* HomeInterfaceController.h */,
-				FCCAD6D91AF010DB00747332 /* HomeInterfaceController.m */,
-				FCCAD6DB1AF010DB00747332 /* NotificationController.h */,
-				FCCAD6DC1AF010DB00747332 /* NotificationController.m */,
-				FCCAD6DE1AF010DB00747332 /* GlanceController.h */,
-				FCCAD6DF1AF010DB00747332 /* GlanceController.m */,
-				FCCAD6E11AF010DB00747332 /* Images.xcassets */,
-				FCCAD6D51AF010DB00747332 /* Supporting Files */,
-				FCCAD6FB1AF0153000747332 /* OrdinaryEventRow.h */,
-				FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */,
-				FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */,
-				FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */,
-				FCCAD7011AF01C6200747332 /* events.plist */,
 				FCCAD7031AF01DA400747332 /* Event.h */,
 				FCCAD7041AF01DA400747332 /* Event.m */,
+				FCCAD6DE1AF010DB00747332 /* GlanceController.h */,
+				FCCAD6DF1AF010DB00747332 /* GlanceController.m */,
+				FCCAD6D81AF010DB00747332 /* HomeInterfaceController.h */,
+				FCCAD6D91AF010DB00747332 /* HomeInterfaceController.m */,
+				FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */,
+				FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */,
+				FCCAD6DB1AF010DB00747332 /* NotificationController.h */,
+				FCCAD6DC1AF010DB00747332 /* NotificationController.m */,
+				FCCAD6FB1AF0153000747332 /* OrdinaryEventRow.h */,
+				FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */,
+				FCCAD6E11AF010DB00747332 /* Images.xcassets */,
+				FCCAD6D51AF010DB00747332 /* Supporting Files */,
 			);
 			path = "Events WatchKit Extension";
 			sourceTree = "<group>";
@@ -216,6 +215,7 @@
 		FCCAD6D51AF010DB00747332 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCCAD7011AF01C6200747332 /* events.plist */,
 				FCCAD6D61AF010DB00747332 /* Info.plist */,
 				FCCAD6D71AF010DB00747332 /* PushNotificationPayload.apns */,
 			);

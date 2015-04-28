@@ -12,11 +12,44 @@
                     <items>
                         <table alignment="left" id="fnS-TW-oZj">
                             <items>
-                                <tableRow id="P4E-5Q-gFe">
-                                    <group key="rootItem" width="1" alignment="left" id="8fk-rC-Nf4"/>
+                                <tableRow identifier="OrdinaryEventRow" id="P4E-5Q-gFe" customClass="OrdinaryEventRow">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="8fk-rC-Nf4">
+                                        <items>
+                                            <label alignment="left" text="Title" id="LV9-Kf-GNZ">
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
+                                            <label alignment="left" text="SubTitle" id="aUl-ad-bCe">
+                                                <fontDescription key="font" type="system" pointSize="10"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="timerLabel" destination="aUl-ad-bCe" id="3JT-Te-RVv"/>
+                                        <outlet property="titleLabel" destination="LV9-Kf-GNZ" id="0w0-Du-C53"/>
+                                    </connections>
                                 </tableRow>
-                                <tableRow id="DOL-Uh-zCc">
-                                    <group key="rootItem" width="1" alignment="left" id="GtA-NY-cgk"/>
+                                <tableRow identifier="ImportantEventRow" id="DOL-Uh-zCc" customClass="ImportantEventRow">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="10" id="GtA-NY-cgk">
+                                        <items>
+                                            <imageView width="0.40000000000000002" height="55" alignment="left" id="9Xt-82-Mza"/>
+                                            <group width="0.59999999999999998" height="60" alignment="left" layout="vertical" id="cAD-gA-tPj">
+                                                <items>
+                                                    <label alignment="left" text="Title" numberOfLines="2" id="zOm-7G-54D">
+                                                        <color key="textColor" red="1" green="0.043650754363716793" blue="0.17739800921994475" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                    <label alignment="left" text="Subtitle" numberOfLines="2" id="VHf-p8-yXh">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="eventImage" destination="9Xt-82-Mza" id="zXq-Wd-Y5p"/>
+                                        <outlet property="timerLabel" destination="VHf-p8-yXh" id="yie-qs-4Ch"/>
+                                        <outlet property="titleLabel" destination="zOm-7G-54D" id="9J7-KB-uZt"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>

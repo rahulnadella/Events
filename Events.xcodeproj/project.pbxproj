@@ -24,6 +24,7 @@
 		FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCCAD6FD1AF0153000747332 /* OrdinaryEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */; };
 		FCCAD7001AF0154F00747332 /* ImportantEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */; };
+		FCCAD7021AF01C6200747332 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD7011AF01C6200747332 /* events.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdinaryEventRow.m; sourceTree = "<group>"; };
 		FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportantEventRow.h; sourceTree = "<group>"; };
 		FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportantEventRow.m; sourceTree = "<group>"; };
+		FCCAD7011AF01C6200747332 /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */,
 				FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */,
 				FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */,
+				FCCAD7011AF01C6200747332 /* events.plist */,
 			);
 			path = "Events WatchKit Extension";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			files = (
 				FCCAD6E21AF010DB00747332 /* Images.xcassets in Resources */,
 				FCCAD6E61AF010DB00747332 /* Events WatchKit App.app in Resources */,
+				FCCAD7021AF01C6200747332 /* events.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

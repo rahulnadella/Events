@@ -27,6 +27,4 @@
 
 @interface GlanceController : WKInterfaceController
 
-@property (nonatomic, strong) IBOutlet WKInterfaceTable *tableView;
-
 @end

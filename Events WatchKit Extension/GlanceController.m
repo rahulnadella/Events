@@ -36,17 +36,14 @@
 
 @end
 
-
 @implementation GlanceController
-
-@synthesize tableView;
 
 - (void)awakeWithContext:(id)context
 {
     [super awakeWithContext:context];
 
     // Configure interface objects here.
-    [self findEventByDate];
+    [self findNextClosetEventByDate];
 }
 
 - (void)willActivate
@@ -61,7 +58,7 @@
     [super didDeactivate];
 }
 
-- (void)findEventByDate
+- (void)findNextClosetEventByDate
 {
     _eventsData = [Event eventsList];
     

@@ -59,11 +59,10 @@
 
 - (void)findEventByDate
 {
-     NSMutableArray *rowTypesList = [NSMutableArray array];
     _eventsData = [Event eventsList];
     
-    NSDate *today = [NSDate date];
-    
+    NSDate *closestDate;
+    Event *closestEvent;
     for (Event *event in _eventsData)
     {
         NSString *eventTime = event.eventTime;
@@ -74,39 +73,22 @@
         NSDate *dateFromString = [[NSDate alloc] init];
         // voila!
         dateFromString = [dateFormatter dateFromString:eventTime];
-        if ([dateFromString compare:today] == NSOrderedDescending)
-        {
-            if (event.eventImageName.length > 0)
-            {
-                [rowTypesList addObject:@"ImportantEventRow"];
-            }
-            else
-            {
-                [rowTypesList addObject:@"OrdinaryEventRow"];
-            }
-        }
-    }
-    
-    
-    [tableView setRowTypes:rowTypesList];
-    
-    for (NSInteger i = 0; i < tableView.numberOfRows; i++)
-    {
-        NSObject *row = [tableView rowControllerAtIndex:i];
-        Event *event = _eventsData[i];
         
-        if ([row isKindOfClass:[ImportantEventRow class]])
+        NSInteger tempDateInterval = [dateFromString timeIntervalSinceNow];
+        //to work with positive and negative time difference
+        if( tempDateInterval < 0 )
         {
-            ImportantEventRow *importantRow = (ImportantEventRow *) row;
-            [importantRow.eventImage setImage:[UIImage imageNamed:event.eventImageName]];
-            [importantRow.titleLabel setText:event.eventTitle];
-            [importantRow.timeLabel setText:event.eventTime];
+            tempDateInterval *= -1;
         }
-        else
+        NSInteger closestDateInterval = [closestDate timeIntervalSinceNow];
+        if( closestDateInterval < 0 )
         {
-            OrdinaryEventRow *ordinaryRow = (OrdinaryEventRow *) row;
-            [ordinaryRow.titleLabel setText:event.eventTitle];
-            [ordinaryRow.timeLabel setText:event.eventTime];
+            closestDateInterval *= -1;
+        }
+        if( tempDateInterval < closestDateInterval )
+        {
+            closestDate = dateFromString;
+            closestEvent = event;
         }
     }
 }

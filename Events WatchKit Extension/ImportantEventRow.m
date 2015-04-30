@@ -26,4 +26,8 @@
 
 @implementation ImportantEventRow
 
+@synthesize titleLabel;
+@synthesize timeLabel;
+@synthesize eventImage;
+
 @end

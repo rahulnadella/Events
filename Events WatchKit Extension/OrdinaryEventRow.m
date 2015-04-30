@@ -26,4 +26,7 @@
 
 @implementation OrdinaryEventRow
 
+@synthesize titleLabel;
+@synthesize timeLabel;
+
 @end

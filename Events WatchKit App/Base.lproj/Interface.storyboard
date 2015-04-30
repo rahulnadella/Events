@@ -66,27 +66,26 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" layout="vertical" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="center" text="Title" id="Grv-9g-Uby">
+                                    <color key="textColor" red="1" green="0.043650754360000002" blue="0.17739800920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </label>
+                                <label alignment="center" text="SubTitle" id="Uc9-1Q-GGj">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                            </items>
+                        </group>
                         <group alignment="left" id="uCw-4Q-Ouw">
                             <items>
-                                <imageView width="64" height="100" alignment="left" id="Gau-jz-zlI"/>
-                                <group width="1" alignment="left" layout="vertical" id="XjD-uL-gj9">
-                                    <items>
-                                        <label alignment="left" text="Title" id="Grv-9g-Uby">
-                                            <color key="textColor" red="1" green="0.043650754360000002" blue="0.17739800920000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="font" type="system" pointSize="14"/>
-                                        </label>
-                                        <label alignment="left" text="SubTitle" id="Uc9-1Q-GGj">
-                                            <fontDescription key="font" type="system" pointSize="12"/>
-                                        </label>
-                                    </items>
-                                </group>
+                                <imageView alignment="left" verticalAlignment="bottom" id="BL1-0h-Nm4"/>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
-                        <outlet property="eventImage" destination="Gau-jz-zlI" id="6R7-J0-4jP"/>
+                        <outlet property="eventImage" destination="BL1-0h-Nm4" id="BoK-lW-GWX"/>
                         <outlet property="eventSubTitle" destination="Uc9-1Q-GGj" id="nno-wJ-nC6"/>
                         <outlet property="eventTitle" destination="Grv-9g-Uby" id="leQ-V9-LKO"/>
                     </connections>

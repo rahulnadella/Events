@@ -23,29 +23,92 @@
  */
 
 #import "GlanceController.h"
-
+#import "Event.h"
+#import "ImportantEventRow.h"
+#import "OrdinaryEventRow.h"
 
 @interface GlanceController()
+
+@property (nonatomic, strong) NSArray *eventsData;
 
 @end
 
 
 @implementation GlanceController
 
-- (void)awakeWithContext:(id)context {
+@synthesize tableView;
+
+- (void)awakeWithContext:(id)context
+{
     [super awakeWithContext:context];
 
     // Configure interface objects here.
 }
 
-- (void)willActivate {
+- (void)willActivate
+{
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }
 
-- (void)didDeactivate {
+- (void)didDeactivate
+{
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+- (void)findEventByDate
+{
+     NSMutableArray *rowTypesList = [NSMutableArray array];
+    _eventsData = [Event eventsList];
+    
+    NSDate *today = [NSDate date];
+    
+    for (Event *event in _eventsData)
+    {
+        NSString *eventTime = event.eventTime;
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        // this is imporant - we set our input date format to match our input string
+        // if format doesn't match you'll get nil from your string, so be careful
+        [dateFormatter setDateFormat:@"MM-dd-yyyy"];
+        NSDate *dateFromString = [[NSDate alloc] init];
+        // voila!
+        dateFromString = [dateFormatter dateFromString:eventTime];
+        if ([dateFromString compare:today] == NSOrderedDescending)
+        {
+            if (event.eventImageName.length > 0)
+            {
+                [rowTypesList addObject:@"ImportantEventRow"];
+            }
+            else
+            {
+                [rowTypesList addObject:@"OrdinaryEventRow"];
+            }
+        }
+    }
+    
+    
+    [tableView setRowTypes:rowTypesList];
+    
+    for (NSInteger i = 0; i < tableView.numberOfRows; i++)
+    {
+        NSObject *row = [tableView rowControllerAtIndex:i];
+        Event *event = _eventsData[i];
+        
+        if ([row isKindOfClass:[ImportantEventRow class]])
+        {
+            ImportantEventRow *importantRow = (ImportantEventRow *) row;
+            [importantRow.eventImage setImage:[UIImage imageNamed:event.eventImageName]];
+            [importantRow.titleLabel setText:event.eventTitle];
+            [importantRow.timeLabel setText:event.eventTime];
+        }
+        else
+        {
+            OrdinaryEventRow *ordinaryRow = (OrdinaryEventRow *) row;
+            [ordinaryRow.titleLabel setText:event.eventTitle];
+            [ordinaryRow.timeLabel setText:event.eventTime];
+        }
+    }
 }
 
 @end

@@ -6,7 +6,7 @@
 		<key>eventImageName</key>
 		<string>event1.jpg</string>
 		<key>eventTime</key>
-		<string>01.01.2016</string>
+		<string>01-01-2015</string>
 		<key>eventTitle</key>
 		<string>New Year Celebration</string>
 	</dict>
@@ -14,7 +14,7 @@
 		<key>eventImageName</key>
 		<string>event2.jpg</string>
 		<key>eventTime</key>
-		<string>02.02.2016</string>
+		<string>05-02-2015</string>
 		<key>eventTitle</key>
 		<string>February party</string>
 	</dict>
@@ -22,7 +22,7 @@
 		<key>eventImageName</key>
 		<string></string>
 		<key>eventTime</key>
-		<string>21.12.2016</string>
+		<string>12-12-2015</string>
 		<key>eventTitle</key>
 		<string>Before Christmas</string>
 	</dict>
@@ -30,7 +30,7 @@
 		<key>eventImageName</key>
 		<string></string>
 		<key>eventTime</key>
-		<string>18.12.2016</string>
+		<string>12-18-2015</string>
 		<key>eventTitle</key>
 		<string>School party</string>
 	</dict>
@@ -38,7 +38,7 @@
 		<key>eventImageName</key>
 		<string>event3.jpg</string>
 		<key>eventTime</key>
-		<string>24.12.2016</string>
+		<string>12-24-2015</string>
 		<key>eventTitle</key>
 		<string>Dinner with Thomas</string>
 	</dict>

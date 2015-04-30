@@ -30,6 +30,9 @@
 @interface GlanceController()
 
 @property (nonatomic, strong) NSArray *eventsData;
+@property (weak, nonatomic) IBOutlet WKInterfaceImage *eventImage;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *eventTitle;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *eventSubTitle;
 
 @end
 
@@ -43,6 +46,7 @@
     [super awakeWithContext:context];
 
     // Configure interface objects here.
+    [self findEventByDate];
 }
 
 - (void)willActivate
@@ -61,7 +65,8 @@
 {
     _eventsData = [Event eventsList];
     
-    NSDate *closestDate;
+    NSMutableArray *events = [[NSMutableArray alloc] init];
+    NSInteger closetDay = 0;
     Event *closestEvent;
     for (Event *event in _eventsData)
     {
@@ -73,24 +78,28 @@
         NSDate *dateFromString = [[NSDate alloc] init];
         // voila!
         dateFromString = [dateFormatter dateFromString:eventTime];
-        
+    
         NSInteger tempDateInterval = [dateFromString timeIntervalSinceNow];
         //to work with positive and negative time difference
-        if( tempDateInterval < 0 )
+        if( tempDateInterval > 0 )
         {
-            tempDateInterval *= -1;
-        }
-        NSInteger closestDateInterval = [closestDate timeIntervalSinceNow];
-        if( closestDateInterval < 0 )
-        {
-            closestDateInterval *= -1;
-        }
-        if( tempDateInterval < closestDateInterval )
-        {
-            closestDate = dateFromString;
-            closestEvent = event;
+            [events addObject:event];
+            if (!closetDay)
+            {
+                closetDay = tempDateInterval;
+                closestEvent = event;
+            }
+            else if (tempDateInterval < closetDay)
+            {
+                closetDay = tempDateInterval;
+                closestEvent = event;
+            }
         }
     }
+    
+    [self.eventImage setImage:[UIImage imageNamed:closestEvent.eventImageName]];
+    [self.eventTitle setText:closestEvent.eventTitle];
+    [self.eventSubTitle setText:closestEvent.eventTime];
 }
 
 @end

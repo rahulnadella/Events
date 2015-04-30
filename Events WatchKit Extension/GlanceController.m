@@ -65,25 +65,24 @@
 {
     _eventsData = [Event eventsList];
     
-    NSMutableArray *events = [[NSMutableArray alloc] init];
     NSInteger closetDay = 0;
     Event *closestEvent;
     for (Event *event in _eventsData)
     {
         NSString *eventTime = event.eventTime;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        // this is imporant - we set our input date format to match our input string
-        // if format doesn't match you'll get nil from your string, so be careful
+        /*
+         This is imporant - we set our input date format to match our input string
+         if format doesn't match you'll get nil from your string, so be careful
+         */
         [dateFormatter setDateFormat:@"MM-dd-yyyy"];
         NSDate *dateFromString = [[NSDate alloc] init];
-        // voila!
         dateFromString = [dateFormatter dateFromString:eventTime];
     
         NSInteger tempDateInterval = [dateFromString timeIntervalSinceNow];
-        //to work with positive and negative time difference
+        /* To work with positive and negative time difference */
         if( tempDateInterval > 0 )
         {
-            [events addObject:event];
             if (!closetDay)
             {
                 closetDay = tempDateInterval;

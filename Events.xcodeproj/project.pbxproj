@@ -67,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FC838CE21AF3CFE100B19E3A /* Events.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Events.entitlements; sourceTree = "<group>"; };
 		FCCAD6A61AF00CD400747332 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCAD6AA1AF00CD400747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6AB1AF00CD400747332 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,6 +154,7 @@
 		FCCAD6A81AF00CD400747332 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				FC838CE21AF3CFE100B19E3A /* Events.entitlements */,
 				FCCAD6AD1AF00CD400747332 /* AppDelegate.h */,
 				FCCAD6AE1AF00CD400747332 /* AppDelegate.m */,
 				FCCAD6B01AF00CD400747332 /* ViewController.h */,
@@ -324,6 +326,12 @@
 				TargetAttributes = {
 					FCCAD6A51AF00CD300747332 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3T9G834Z4J;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FCCAD6BE1AF00CD400747332 = {
 						CreatedOnToolsVersion = 6.2;
@@ -557,9 +565,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -567,9 +579,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -680,6 +696,7 @@
 				FCCAD6CB1AF00CD400747332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCCAD6CC1AF00CD400747332 /* Build configuration list for PBXNativeTarget "EventsTests" */ = {
 			isa = XCConfigurationList;
@@ -688,6 +705,7 @@
 				FCCAD6CE1AF00CD400747332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCCAD6F41AF010DB00747332 /* Build configuration list for PBXNativeTarget "Events WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -696,6 +714,7 @@
 				FCCAD6F61AF010DB00747332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCCAD6F71AF010DB00747332 /* Build configuration list for PBXNativeTarget "Events WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -704,6 +723,7 @@
 				FCCAD6F91AF010DB00747332 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

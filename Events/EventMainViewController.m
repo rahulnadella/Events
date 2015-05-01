@@ -22,10 +22,22 @@
  THE SOFTWARE.
  */
 
-#import <UIKit/UIKit.h>
+#import "EventMainViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface EventMainViewController ()
 
 @end
 
+@implementation EventMainViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end

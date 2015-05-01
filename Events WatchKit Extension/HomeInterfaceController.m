@@ -23,9 +23,7 @@
  */
 
 #import "HomeInterfaceController.h"
-#import "OrdinaryEventRow.h"
-#import "ImportantEventRow.h"
-#import "Event.h"
+@import EventsFramework;
 
 @interface HomeInterfaceController()
 

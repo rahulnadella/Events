@@ -23,9 +23,7 @@
  */
 
 #import "GlanceController.h"
-#import "Event.h"
-#import "ImportantEventRow.h"
-#import "OrdinaryEventRow.h"
+@import EventsFramework;
 
 @interface GlanceController()
 

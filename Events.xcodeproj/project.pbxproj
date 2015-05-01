@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC838D2F1AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; };
+		FC838D301AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; };
 		FCCAD6AC1AF00CD400747332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AB1AF00CD400747332 /* main.m */; };
 		FCCAD6AF1AF00CD400747332 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AE1AF00CD400747332 /* AppDelegate.m */; };
 		FCCAD6B21AF00CD400747332 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6B11AF00CD400747332 /* ViewController.m */; };
@@ -22,10 +24,7 @@
 		FCCAD6EE1AF010DB00747332 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EC1AF010DB00747332 /* Interface.storyboard */; };
 		FCCAD6F01AF010DB00747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EF1AF010DB00747332 /* Images.xcassets */; };
 		FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FCCAD6FD1AF0153000747332 /* OrdinaryEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */; };
-		FCCAD7001AF0154F00747332 /* ImportantEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */; };
 		FCCAD7021AF01C6200747332 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD7011AF01C6200747332 /* events.plist */; };
-		FCCAD7051AF01DA400747332 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD7041AF01DA400747332 /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		FC838CE21AF3CFE100B19E3A /* Events.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Events.entitlements; sourceTree = "<group>"; };
+		FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventsFramework.framework; path = "../../../Library/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator/EventsFramework.framework"; sourceTree = "<group>"; };
 		FCCAD6A61AF00CD400747332 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCAD6AA1AF00CD400747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6AB1AF00CD400747332 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,13 +95,7 @@
 		FCCAD6EB1AF010DB00747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6ED1AF010DB00747332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FCCAD6EF1AF010DB00747332 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FCCAD6FB1AF0153000747332 /* OrdinaryEventRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdinaryEventRow.h; sourceTree = "<group>"; };
-		FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdinaryEventRow.m; sourceTree = "<group>"; };
-		FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportantEventRow.h; sourceTree = "<group>"; };
-		FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportantEventRow.m; sourceTree = "<group>"; };
 		FCCAD7011AF01C6200747332 /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
-		FCCAD7031AF01DA400747332 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		FCCAD7041AF01DA400747332 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC838D2F1AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC838D301AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +128,7 @@
 		FCCAD69D1AF00CD300747332 = {
 			isa = PBXGroup;
 			children = (
+				FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */,
 				FCCAD6A81AF00CD400747332 /* Events */,
 				FCCAD6C21AF00CD400747332 /* EventsTests */,
 				FCCAD6D41AF010DB00747332 /* Events WatchKit Extension */,
@@ -196,18 +193,12 @@
 		FCCAD6D41AF010DB00747332 /* Events WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FCCAD7031AF01DA400747332 /* Event.h */,
-				FCCAD7041AF01DA400747332 /* Event.m */,
 				FCCAD6DE1AF010DB00747332 /* GlanceController.h */,
 				FCCAD6DF1AF010DB00747332 /* GlanceController.m */,
 				FCCAD6D81AF010DB00747332 /* HomeInterfaceController.h */,
 				FCCAD6D91AF010DB00747332 /* HomeInterfaceController.m */,
-				FCCAD6FE1AF0154F00747332 /* ImportantEventRow.h */,
-				FCCAD6FF1AF0154F00747332 /* ImportantEventRow.m */,
 				FCCAD6DB1AF010DB00747332 /* NotificationController.h */,
 				FCCAD6DC1AF010DB00747332 /* NotificationController.m */,
-				FCCAD6FB1AF0153000747332 /* OrdinaryEventRow.h */,
-				FCCAD6FC1AF0153000747332 /* OrdinaryEventRow.m */,
 				FCCAD6E11AF010DB00747332 /* Images.xcassets */,
 				FCCAD6D51AF010DB00747332 /* Supporting Files */,
 			);
@@ -428,12 +419,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCCAD7051AF01DA400747332 /* Event.m in Sources */,
 				FCCAD6DD1AF010DB00747332 /* NotificationController.m in Sources */,
 				FCCAD6DA1AF010DB00747332 /* HomeInterfaceController.m in Sources */,
 				FCCAD6E01AF010DB00747332 /* GlanceController.m in Sources */,
-				FCCAD7001AF0154F00747332 /* ImportantEventRow.m in Sources */,
-				FCCAD6FD1AF0153000747332 /* OrdinaryEventRow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -530,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -564,10 +554,15 @@
 		FCCAD6CA1AF00CD400747332 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
+				);
 				INFOPLIST_FILE = Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -578,10 +573,15 @@
 		FCCAD6CB1AF00CD400747332 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
+				);
 				INFOPLIST_FILE = Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -656,6 +656,11 @@
 		FCCAD6F81AF010DB00747332 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -670,6 +675,11 @@
 		FCCAD6F91AF010DB00747332 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
+				);
 				INFOPLIST_FILE = "Events WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";

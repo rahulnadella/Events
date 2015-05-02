@@ -120,6 +120,7 @@
 		FCCDDDBE1AF537D4001B6967 /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
 		FCCDDDBF1AF537D4001B6967 /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
 		FCCDDDC11AF53906001B6967 /* Events-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Events-Prefix.pch"; sourceTree = "<group>"; };
+		FCCDDDC21AF557EE001B6967 /* Events WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Events WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +224,7 @@
 		FCCAD6D41AF010DB00747332 /* Events WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FCCDDDC21AF557EE001B6967 /* Events WatchKit Extension.entitlements */,
 				FCCAD6DE1AF010DB00747332 /* GlanceController.h */,
 				FCCAD6DF1AF010DB00747332 /* GlanceController.m */,
 				FCCAD6D81AF010DB00747332 /* HomeInterfaceController.h */,
@@ -378,6 +380,12 @@
 					};
 					FCCAD6D21AF010DB00747332 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3T9G834Z4J;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FCCAD6E41AF010DB00747332 = {
 						CreatedOnToolsVersion = 6.2;
@@ -712,6 +720,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_ENTITLEMENTS = "Events WatchKit Extension/Events WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
@@ -723,6 +734,7 @@
 				INFOPLIST_FILE = "Events WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -731,6 +743,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = NO;
+				CODE_SIGN_ENTITLEMENTS = "Events WatchKit Extension/Events WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
@@ -738,6 +753,7 @@
 				INFOPLIST_FILE = "Events WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

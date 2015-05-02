@@ -23,9 +23,11 @@
 		FCCAD6EE1AF010DB00747332 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EC1AF010DB00747332 /* Interface.storyboard */; };
 		FCCAD6F01AF010DB00747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EF1AF010DB00747332 /* Images.xcassets */; };
 		FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FCCAD7021AF01C6200747332 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD7011AF01C6200747332 /* events.plist */; };
 		FCCDDDAD1AF51947001B6967 /* EventsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; };
 		FCCDDDAE1AF51947001B6967 /* EventsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCCDDDB21AF52310001B6967 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDB11AF52310001B6967 /* EventTableViewController.m */; };
+		FCCDDDB51AF52580001B6967 /* EventCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDB41AF52580001B6967 /* EventCellTableViewCell.m */; };
+		FCCDDDB71AF52D11001B6967 /* EventsFramework.framework in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +59,9 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstSubfolderSpec = 10;
 			files = (
+				FCCDDDB71AF52D11001B6967 /* EventsFramework.framework in Embed App Extensions */,
 				FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -107,7 +110,10 @@
 		FCCAD6EB1AF010DB00747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6ED1AF010DB00747332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FCCAD6EF1AF010DB00747332 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FCCAD7011AF01C6200747332 /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
+		FCCDDDB01AF52310001B6967 /* EventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableViewController.h; sourceTree = "<group>"; };
+		FCCDDDB11AF52310001B6967 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
+		FCCDDDB31AF52580001B6967 /* EventCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCellTableViewCell.h; path = "Custom Cells/EventCellTableViewCell.h"; sourceTree = "<group>"; };
+		FCCDDDB41AF52580001B6967 /* EventCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventCellTableViewCell.m; path = "Custom Cells/EventCellTableViewCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,9 +174,12 @@
 				FCCAD6AE1AF00CD400747332 /* AppDelegate.m */,
 				FCCAD6B01AF00CD400747332 /* EventMainViewController.h */,
 				FCCAD6B11AF00CD400747332 /* EventMainViewController.m */,
+				FCCDDDB01AF52310001B6967 /* EventTableViewController.h */,
+				FCCDDDB11AF52310001B6967 /* EventTableViewController.m */,
 				FCCAD6B31AF00CD400747332 /* Main.storyboard */,
 				FCCAD6B61AF00CD400747332 /* Images.xcassets */,
 				FCCAD6B81AF00CD400747332 /* LaunchScreen.xib */,
+				FCCDDDB61AF52585001B6967 /* Custom Cell */,
 				FCCAD6A91AF00CD400747332 /* Supporting Files */,
 			);
 			path = Events;
@@ -220,7 +229,6 @@
 		FCCAD6D51AF010DB00747332 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FCCAD7011AF01C6200747332 /* events.plist */,
 				FCCAD6D61AF010DB00747332 /* Info.plist */,
 				FCCAD6D71AF010DB00747332 /* PushNotificationPayload.apns */,
 			);
@@ -243,6 +251,15 @@
 				FCCAD6EB1AF010DB00747332 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCCDDDB61AF52585001B6967 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FCCDDDB31AF52580001B6967 /* EventCellTableViewCell.h */,
+				FCCDDDB41AF52580001B6967 /* EventCellTableViewCell.m */,
+			);
+			name = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +411,6 @@
 			files = (
 				FCCAD6E21AF010DB00747332 /* Images.xcassets in Resources */,
 				FCCAD6E61AF010DB00747332 /* Events WatchKit App.app in Resources */,
-				FCCAD7021AF01C6200747332 /* events.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +432,9 @@
 			files = (
 				FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */,
 				FCCAD6AF1AF00CD400747332 /* AppDelegate.m in Sources */,
+				FCCDDDB21AF52310001B6967 /* EventTableViewController.m in Sources */,
 				FCCAD6AC1AF00CD400747332 /* main.m in Sources */,
+				FCCDDDB51AF52580001B6967 /* EventCellTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

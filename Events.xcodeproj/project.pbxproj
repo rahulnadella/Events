@@ -29,6 +29,7 @@
 		FCCDDDB51AF52580001B6967 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDB41AF52580001B6967 /* EventTableViewCell.m */; };
 		FCCDDDB71AF52D11001B6967 /* EventsFramework.framework in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FCCDDDB91AF52E13001B6967 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCDDDB81AF52E13001B6967 /* events.plist */; };
+		FCCDDDC01AF537D4001B6967 /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDBF1AF537D4001B6967 /* Appearance.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,9 @@
 		FCCDDDB31AF52580001B6967 /* EventTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventTableViewCell.h; path = "Custom Cells/EventTableViewCell.h"; sourceTree = "<group>"; };
 		FCCDDDB41AF52580001B6967 /* EventTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventTableViewCell.m; path = "Custom Cells/EventTableViewCell.m"; sourceTree = "<group>"; };
 		FCCDDDB81AF52E13001B6967 /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
+		FCCDDDBE1AF537D4001B6967 /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
+		FCCDDDBF1AF537D4001B6967 /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
+		FCCDDDC11AF53906001B6967 /* Events-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Events-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		FCCAD6A81AF00CD400747332 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				FCCDDDBA1AF53625001B6967 /* Style */,
 				FC838CE21AF3CFE100B19E3A /* Events.entitlements */,
 				FCCAD6AD1AF00CD400747332 /* EventsAppDelegate.h */,
 				FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */,
@@ -190,6 +195,7 @@
 		FCCAD6A91AF00CD400747332 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCCDDDC11AF53906001B6967 /* Events-Prefix.pch */,
 				FCCDDDB81AF52E13001B6967 /* events.plist */,
 				FCCAD6AA1AF00CD400747332 /* Info.plist */,
 				FCCAD6AB1AF00CD400747332 /* main.m */,
@@ -263,6 +269,15 @@
 				FCCDDDB41AF52580001B6967 /* EventTableViewCell.m */,
 			);
 			name = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		FCCDDDBA1AF53625001B6967 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				FCCDDDBE1AF537D4001B6967 /* Appearance.h */,
+				FCCDDDBF1AF537D4001B6967 /* Appearance.m */,
+			);
+			name = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */,
+				FCCDDDC01AF537D4001B6967 /* Appearance.m in Sources */,
 				FCCAD6AF1AF00CD400747332 /* EventsAppDelegate.m in Sources */,
 				FCCDDDB21AF52310001B6967 /* EventTableViewController.m in Sources */,
 				FCCAD6AC1AF00CD400747332 /* main.m in Sources */,
@@ -598,6 +614,8 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Events/Events-Prefix.pch";
 				INFOPLIST_FILE = Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -617,6 +635,8 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Events/Events-Prefix.pch";
 				INFOPLIST_FILE = Events/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

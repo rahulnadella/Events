@@ -14,4 +14,6 @@
 
 + (void)customizeNavigationBar;
 
++ (UIColor *)colorWithHexString:(NSString *)hexString;
+
 @end

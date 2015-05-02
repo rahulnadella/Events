@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FC838D2F1AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; };
-		FC838D301AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; };
 		FCCAD6AC1AF00CD400747332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AB1AF00CD400747332 /* main.m */; };
 		FCCAD6AF1AF00CD400747332 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AE1AF00CD400747332 /* AppDelegate.m */; };
 		FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6B11AF00CD400747332 /* EventMainViewController.m */; };
@@ -25,6 +24,8 @@
 		FCCAD6F01AF010DB00747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6EF1AF010DB00747332 /* Images.xcassets */; };
 		FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCCAD6D31AF010DB00747332 /* Events WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCCAD7021AF01C6200747332 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD7011AF01C6200747332 /* events.plist */; };
+		FCCDDDAD1AF51947001B6967 /* EventsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; };
+		FCCDDDAE1AF51947001B6967 /* EventsFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,17 @@
 				FCCAD6F31AF010DB00747332 /* Events WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCCDDDAF1AF51947001B6967 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FCCDDDAE1AF51947001B6967 /* EventsFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -118,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC838D301AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */,
+				FCCDDDAD1AF51947001B6967 /* EventsFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +292,7 @@
 				FCCAD6CF1AF010DB00747332 /* Sources */,
 				FCCAD6D01AF010DB00747332 /* Frameworks */,
 				FCCAD6D11AF010DB00747332 /* Resources */,
+				FCCDDDAF1AF51947001B6967 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

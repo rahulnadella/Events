@@ -23,6 +23,7 @@
  */
 
 #import "EventsAppDelegate.h"
+#import "Appearance.h"
 
 @interface EventsAppDelegate ()
 
@@ -33,6 +34,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Appearance customizeNavigationAppearance];
+    [Appearance customizeNavigationBar];
+    
     // Override point for customization after application launch.
     return YES;
 }

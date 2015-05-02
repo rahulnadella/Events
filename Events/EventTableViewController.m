@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     
+    [self.navigationItem setTitle:@"Events"];
+    
     self.eventData = [Event eventsList];
 }
 

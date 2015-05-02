@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC838D2F1AF3F0F200B19E3A /* EventsFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; };
 		FCCAD6AC1AF00CD400747332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AB1AF00CD400747332 /* main.m */; };
-		FCCAD6AF1AF00CD400747332 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AE1AF00CD400747332 /* AppDelegate.m */; };
+		FCCAD6AF1AF00CD400747332 /* EventsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */; };
 		FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6B11AF00CD400747332 /* EventMainViewController.m */; };
 		FCCAD6B51AF00CD400747332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B31AF00CD400747332 /* Main.storyboard */; };
 		FCCAD6B71AF00CD400747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B61AF00CD400747332 /* Images.xcassets */; };
@@ -87,8 +87,8 @@
 		FCCAD6A61AF00CD400747332 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCAD6AA1AF00CD400747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCCAD6AB1AF00CD400747332 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FCCAD6AD1AF00CD400747332 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FCCAD6AE1AF00CD400747332 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FCCAD6AD1AF00CD400747332 /* EventsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventsAppDelegate.h; sourceTree = "<group>"; };
+		FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventsAppDelegate.m; sourceTree = "<group>"; };
 		FCCAD6B01AF00CD400747332 /* EventMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventMainViewController.h; sourceTree = "<group>"; };
 		FCCAD6B11AF00CD400747332 /* EventMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventMainViewController.m; sourceTree = "<group>"; };
 		FCCAD6B41AF00CD400747332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				FC838CE21AF3CFE100B19E3A /* Events.entitlements */,
-				FCCAD6AD1AF00CD400747332 /* AppDelegate.h */,
-				FCCAD6AE1AF00CD400747332 /* AppDelegate.m */,
+				FCCAD6AD1AF00CD400747332 /* EventsAppDelegate.h */,
+				FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */,
 				FCCAD6B01AF00CD400747332 /* EventMainViewController.h */,
 				FCCAD6B11AF00CD400747332 /* EventMainViewController.m */,
 				FCCDDDB01AF52310001B6967 /* EventTableViewController.h */,
@@ -435,7 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */,
-				FCCAD6AF1AF00CD400747332 /* AppDelegate.m in Sources */,
+				FCCAD6AF1AF00CD400747332 /* EventsAppDelegate.m in Sources */,
 				FCCDDDB21AF52310001B6967 /* EventTableViewController.m in Sources */,
 				FCCAD6AC1AF00CD400747332 /* main.m in Sources */,
 				FCCDDDB51AF52580001B6967 /* EventTableViewCell.m in Sources */,

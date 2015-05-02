@@ -22,13 +22,13 @@
  THE SOFTWARE.
  */
 
-#import "AppDelegate.h"
+#import "EventsAppDelegate.h"
 
-@interface AppDelegate ()
+@interface EventsAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation EventsAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

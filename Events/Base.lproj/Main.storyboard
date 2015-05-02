@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fxb-4B-iFm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Event Table View Controller-->
@@ -18,22 +19,38 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YnT-A9-3ig" id="kKo-aU-XSN">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-fs-Sm2">
-                                            <rect key="frame" x="8" y="8" width="125" height="43.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-fs-Sm2">
+                                            <rect key="frame" x="8" y="8" width="125" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="125" id="OIg-Ij-dmZ"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHd-o6-YWt">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHd-o6-YWt">
                                             <rect key="frame" x="141" y="8" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="n7r-OH-qyH"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-pj-FYL">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGF-pj-FYL">
                                             <rect key="frame" x="141" y="31" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2bW-fs-Sm2" firstAttribute="bottom" secondItem="dGF-pj-FYL" secondAttribute="bottom" id="7E5-mH-2nK"/>
+                                        <constraint firstItem="2bW-fs-Sm2" firstAttribute="leading" secondItem="kKo-aU-XSN" secondAttribute="leadingMargin" id="RPD-M2-T6Y"/>
+                                        <constraint firstItem="mHd-o6-YWt" firstAttribute="leading" secondItem="2bW-fs-Sm2" secondAttribute="trailing" constant="8" symbolic="YES" id="WHS-cz-iP5"/>
+                                        <constraint firstItem="dGF-pj-FYL" firstAttribute="leading" secondItem="mHd-o6-YWt" secondAttribute="leading" id="iIj-tM-ePr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2bW-fs-Sm2" secondAttribute="bottom" constant="-0.5" id="lpl-4o-eqf"/>
+                                        <constraint firstItem="dGF-pj-FYL" firstAttribute="top" secondItem="mHd-o6-YWt" secondAttribute="bottom" constant="2" id="mMT-BV-FBy"/>
+                                        <constraint firstItem="mHd-o6-YWt" firstAttribute="top" secondItem="kKo-aU-XSN" secondAttribute="topMargin" id="tkd-FL-7d1"/>
+                                        <constraint firstItem="2bW-fs-Sm2" firstAttribute="top" secondItem="mHd-o6-YWt" secondAttribute="top" id="x6h-Gs-UNg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="eventImage" destination="2bW-fs-Sm2" id="IyR-LO-EeB"/>

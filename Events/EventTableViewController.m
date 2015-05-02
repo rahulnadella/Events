@@ -7,6 +7,7 @@
 //
 
 #import "EventTableViewController.h"
+#import "Event.h"
 #import "EventTableViewCell.h"
 
 @interface EventTableViewController ()

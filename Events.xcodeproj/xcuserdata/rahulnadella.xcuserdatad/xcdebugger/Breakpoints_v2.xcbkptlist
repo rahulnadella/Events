@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Events WatchKit Extension/HomeInterfaceController.m"
-            timestampString = "452290085.569377"
+            timestampString = "452299093.355397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-awakeWithContext:"
-            landmarkType = "5">
+            startingLineNumber = "99"
+            endingLineNumber = "99">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Events WatchKit Extension/HomeInterfaceController.m"
-            timestampString = "452290750.320531"
+            timestampString = "452299093.355397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-willActivate"
-            landmarkType = "5">
+            startingLineNumber = "105"
+            endingLineNumber = "105">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,13 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Events WatchKit Extension/HomeInterfaceController.m"
-            timestampString = "452290752.524727"
+            timestampString = "452299093.355397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-didDeactivate"
-            landmarkType = "5">
+            startingLineNumber = "111"
+            endingLineNumber = "111">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,13 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Events WatchKit Extension/GlanceController.m"
-            timestampString = "452291592.719908"
+            timestampString = "452300146.610172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-awakeWithContext:"
-            landmarkType = "5">
+            startingLineNumber = "95"
+            endingLineNumber = "95">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,13 +66,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Events WatchKit Extension/GlanceController.m"
-            timestampString = "452291594.285889"
+            timestampString = "452300146.610172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-willActivate"
-            landmarkType = "5">
+            startingLineNumber = "101"
+            endingLineNumber = "101">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,13 +80,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Events WatchKit Extension/GlanceController.m"
-            timestampString = "452291595.40389"
+            timestampString = "452300146.610172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-didDeactivate"
-            landmarkType = "5">
+            startingLineNumber = "107"
+            endingLineNumber = "107">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

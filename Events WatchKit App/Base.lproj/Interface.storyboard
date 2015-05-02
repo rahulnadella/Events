@@ -1,98 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1bq-7p-MfW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
-        <!--Home Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
-            <objects>
-                <controller id="AgC-eL-Hgc" customClass="HomeInterfaceController">
-                    <items>
-                        <table alignment="left" id="fnS-TW-oZj">
-                            <items>
-                                <tableRow identifier="OrdinaryEventRow" id="P4E-5Q-gFe" customClass="OrdinaryEventRow">
-                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="8fk-rC-Nf4">
-                                        <items>
-                                            <label alignment="left" text="Title" id="LV9-Kf-GNZ">
-                                                <fontDescription key="font" type="system" pointSize="12"/>
-                                            </label>
-                                            <label alignment="left" text="SubTitle" id="aUl-ad-bCe">
-                                                <fontDescription key="font" type="system" pointSize="10"/>
-                                            </label>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="timeLabel" destination="aUl-ad-bCe" id="NTL-H0-fjR"/>
-                                        <outlet property="titleLabel" destination="LV9-Kf-GNZ" id="0w0-Du-C53"/>
-                                    </connections>
-                                </tableRow>
-                                <tableRow identifier="ImportantEventRow" id="DOL-Uh-zCc" customClass="ImportantEventRow">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="10" id="GtA-NY-cgk">
-                                        <items>
-                                            <imageView width="0.40000000000000002" height="55" alignment="left" id="9Xt-82-Mza"/>
-                                            <group width="0.59999999999999998" height="60" alignment="left" layout="vertical" id="cAD-gA-tPj">
-                                                <items>
-                                                    <label alignment="left" text="Title" numberOfLines="2" id="zOm-7G-54D">
-                                                        <color key="textColor" red="1" green="0.043650754363716793" blue="0.17739800921994475" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="font" type="system" pointSize="12"/>
-                                                    </label>
-                                                    <label alignment="left" text="Subtitle" numberOfLines="2" id="VHf-p8-yXh">
-                                                        <fontDescription key="font" type="system" pointSize="10"/>
-                                                    </label>
-                                                </items>
-                                            </group>
-                                        </items>
-                                    </group>
-                                    <connections>
-                                        <outlet property="eventImage" destination="9Xt-82-Mza" id="zXq-Wd-Y5p"/>
-                                        <outlet property="timeLabel" destination="VHf-p8-yXh" id="XHO-UY-5Iv"/>
-                                        <outlet property="titleLabel" destination="zOm-7G-54D" id="9J7-KB-uZt"/>
-                                    </connections>
-                                </tableRow>
-                            </items>
-                        </table>
-                    </items>
-                    <connections>
-                        <outlet property="tableView" destination="fnS-TW-oZj" id="Ej7-yA-rer"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="235" y="347"/>
-        </scene>
-        <!--Glance Interface Controller-->
-        <scene sceneID="BOz-TT-tkC">
-            <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
-                    <items>
-                        <group alignment="left" layout="vertical" id="t8f-Gd-c4y">
-                            <items>
-                                <label alignment="center" text="Title" id="Grv-9g-Uby">
-                                    <color key="textColor" red="1" green="0.043650754360000002" blue="0.17739800920000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="14"/>
-                                </label>
-                                <label alignment="center" text="SubTitle" id="Uc9-1Q-GGj">
-                                    <fontDescription key="font" type="system" pointSize="12"/>
-                                </label>
-                            </items>
-                        </group>
-                        <group alignment="left" id="uCw-4Q-Ouw">
-                            <items>
-                                <imageView alignment="left" verticalAlignment="bottom" id="BL1-0h-Nm4"/>
-                            </items>
-                        </group>
-                    </items>
-                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
-                    <connections>
-                        <outlet property="eventImage" destination="BL1-0h-Nm4" id="BoK-lW-GWX"/>
-                        <outlet property="eventSubTitle" destination="Uc9-1Q-GGj" id="nno-wJ-nC6"/>
-                        <outlet property="eventTitle" destination="Grv-9g-Uby" id="leQ-V9-LKO"/>
-                    </connections>
-                </glanceController>
-            </objects>
-            <point key="canvasLocation" x="235" y="672"/>
-        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
@@ -115,6 +27,94 @@
                 <controller id="gdX-wl-uQE" customClass="NotificationController"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+        <!--Home Interface Controller-->
+        <scene sceneID="9sY-yW-jga">
+            <objects>
+                <controller id="1bq-7p-MfW" customClass="HomeInterfaceController">
+                    <items>
+                        <table alignment="left" id="eYn-90-Ag6">
+                            <items>
+                                <tableRow identifier="OrdinaryEventRow" id="pkc-OJ-Asi" customClass="OrdinaryEventRow">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="oYH-pe-Onn">
+                                        <items>
+                                            <label alignment="left" text="Title" id="j5q-bd-bdf">
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
+                                            <label alignment="left" text="SubTitle" id="Au7-nZ-tbX">
+                                                <fontDescription key="font" type="system" pointSize="10"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="timeLabel" destination="Au7-nZ-tbX" id="lvq-oq-aA5"/>
+                                        <outlet property="titleLabel" destination="j5q-bd-bdf" id="B6C-YC-QWJ"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="ImportantEventRow" id="RmI-yI-x5f" customClass="ImportantEventRow">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="10" id="3cH-ut-dmJ">
+                                        <items>
+                                            <imageView width="0.40000000000000002" height="55" alignment="left" id="8lN-pg-eTk"/>
+                                            <group width="0.59999999999999998" height="60" alignment="left" layout="vertical" id="vjx-Dw-ndB">
+                                                <items>
+                                                    <label alignment="left" text="Title" numberOfLines="2" id="BSb-f8-AS3">
+                                                        <color key="textColor" red="1" green="0.043650754360000002" blue="0.17739800920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" type="system" pointSize="12"/>
+                                                    </label>
+                                                    <label alignment="left" text="Subtitle" numberOfLines="2" id="Zmy-sJ-c5c">
+                                                        <fontDescription key="font" type="system" pointSize="10"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="eventImage" destination="8lN-pg-eTk" id="Gtz-kA-daM"/>
+                                        <outlet property="timeLabel" destination="Zmy-sJ-c5c" id="0lU-Rg-olP"/>
+                                        <outlet property="titleLabel" destination="BSb-f8-AS3" id="GZF-mC-VVi"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="eYn-90-Ag6" id="Xda-8x-rJl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="gsk-Vb-PCS">
+            <objects>
+                <glanceController spacing="0.0" id="2Km-fh-gBs" customClass="GlanceController">
+                    <items>
+                        <group alignment="left" layout="vertical" id="2BC-sN-lVk">
+                            <items>
+                                <label alignment="center" text="Title" id="oZN-6D-Nfw">
+                                    <color key="textColor" red="1" green="0.043650754360000002" blue="0.17739800920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </label>
+                                <label alignment="center" text="SubTitle" id="GjA-A2-8Pr">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" id="CRh-qT-Ul6">
+                            <items>
+                                <imageView alignment="left" verticalAlignment="bottom" id="xEy-Nl-XNW"/>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="eventImage" destination="xEy-Nl-XNW" id="x88-ct-4H3"/>
+                        <outlet property="eventSubTitle" destination="GjA-A2-8Pr" id="tlD-y2-mOr"/>
+                        <outlet property="eventTitle" destination="oZN-6D-Nfw" id="oOl-Vi-Hb9"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="673"/>
         </scene>
     </scenes>
 </document>

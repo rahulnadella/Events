@@ -171,7 +171,6 @@
 		FCCAD6A81AF00CD400747332 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				FCCDDDB81AF52E13001B6967 /* events.plist */,
 				FC838CE21AF3CFE100B19E3A /* Events.entitlements */,
 				FCCAD6AD1AF00CD400747332 /* AppDelegate.h */,
 				FCCAD6AE1AF00CD400747332 /* AppDelegate.m */,
@@ -191,6 +190,7 @@
 		FCCAD6A91AF00CD400747332 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCCDDDB81AF52E13001B6967 /* events.plist */,
 				FCCAD6AA1AF00CD400747332 /* Info.plist */,
 				FCCAD6AB1AF00CD400747332 /* main.m */,
 			);

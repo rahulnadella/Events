@@ -28,6 +28,7 @@
 		FCCDDDB21AF52310001B6967 /* EventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDB11AF52310001B6967 /* EventTableViewController.m */; };
 		FCCDDDB51AF52580001B6967 /* EventCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDB41AF52580001B6967 /* EventCellTableViewCell.m */; };
 		FCCDDDB71AF52D11001B6967 /* EventsFramework.framework in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC838D2E1AF3F0F200B19E3A /* EventsFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FCCDDDB91AF52E13001B6967 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCDDDB81AF52E13001B6967 /* events.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		FCCDDDB11AF52310001B6967 /* EventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTableViewController.m; sourceTree = "<group>"; };
 		FCCDDDB31AF52580001B6967 /* EventCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventCellTableViewCell.h; path = "Custom Cells/EventCellTableViewCell.h"; sourceTree = "<group>"; };
 		FCCDDDB41AF52580001B6967 /* EventCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventCellTableViewCell.m; path = "Custom Cells/EventCellTableViewCell.m"; sourceTree = "<group>"; };
+		FCCDDDB81AF52E13001B6967 /* events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = events.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		FCCAD6A81AF00CD400747332 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				FCCDDDB81AF52E13001B6967 /* events.plist */,
 				FC838CE21AF3CFE100B19E3A /* Events.entitlements */,
 				FCCAD6AD1AF00CD400747332 /* AppDelegate.h */,
 				FCCAD6AE1AF00CD400747332 /* AppDelegate.m */,
@@ -395,6 +398,7 @@
 				FCCAD6B51AF00CD400747332 /* Main.storyboard in Resources */,
 				FCCAD6BA1AF00CD400747332 /* LaunchScreen.xib in Resources */,
 				FCCAD6B71AF00CD400747332 /* Images.xcassets in Resources */,
+				FCCDDDB91AF52E13001B6967 /* events.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

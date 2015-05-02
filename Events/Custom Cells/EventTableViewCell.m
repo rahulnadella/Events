@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Rahul Nadella. All rights reserved.
 //
 
-#import "EventCellTableViewCell.h"
+#import "EventTableViewCell.h"
 
-@implementation EventCellTableViewCell
+@implementation EventTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

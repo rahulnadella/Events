@@ -7,7 +7,7 @@
 //
 
 #import "EventTableViewController.h"
-#import "EventCellTableViewCell.h"
+#import "EventTableViewCell.h"
 
 @interface EventTableViewController ()
 
@@ -44,7 +44,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    EventCellTableViewCell *eventCell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
+    EventTableViewCell *eventCell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
     
     Event *event = self.eventData[indexPath.row];
     eventCell.eventTitle.text = event.eventTitle;

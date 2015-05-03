@@ -8,7 +8,7 @@
 
 #import "EventTableViewController.h"
 #import "Event.h"
-#import "EventMainViewController.h"
+#import "AddEventViewController.h"
 #import "EventTableViewCell.h"
 
 @interface EventTableViewController ()
@@ -95,9 +95,9 @@
 {
     if ([segue.identifier isEqualToString:@"Add Event"])
     {
-        if ([segue.destinationViewController isKindOfClass:[EventMainViewController class]])
+        if ([segue.destinationViewController isKindOfClass:[AddEventViewController class]])
         {
-            EventMainViewController *emvc = segue.destinationViewController;
+            AddEventViewController *emvc = segue.destinationViewController;
             [emvc setTitle:@"Add Event"];
         }
     }

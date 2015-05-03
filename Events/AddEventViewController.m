@@ -22,17 +22,17 @@
  THE SOFTWARE.
  */
 
-#import "EventMainViewController.h"
+#import "AddEventViewController.h"
 #import "Event.h"
 
-@interface EventMainViewController ()
+@interface AddEventViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *dateLabel;
 
 @end
 
-@implementation EventMainViewController
+@implementation AddEventViewController
 
 - (void)didReceiveMemoryWarning
 {

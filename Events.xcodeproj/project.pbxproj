@@ -25,7 +25,7 @@
 		FC67DE611AF6689000F919CB /* EventUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FC67DE601AF6689000F919CB /* EventUtil.m */; };
 		FCCAD6AC1AF00CD400747332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AB1AF00CD400747332 /* main.m */; };
 		FCCAD6AF1AF00CD400747332 /* EventsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */; };
-		FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6B11AF00CD400747332 /* EventMainViewController.m */; };
+		FCCAD6B21AF00CD400747332 /* AddEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6B11AF00CD400747332 /* AddEventViewController.m */; };
 		FCCAD6B51AF00CD400747332 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B31AF00CD400747332 /* Main.storyboard */; };
 		FCCAD6B71AF00CD400747332 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B61AF00CD400747332 /* Images.xcassets */; };
 		FCCAD6BA1AF00CD400747332 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCCAD6B81AF00CD400747332 /* LaunchScreen.xib */; };
@@ -114,8 +114,8 @@
 		FCCAD6AB1AF00CD400747332 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FCCAD6AD1AF00CD400747332 /* EventsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventsAppDelegate.h; sourceTree = "<group>"; };
 		FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventsAppDelegate.m; sourceTree = "<group>"; };
-		FCCAD6B01AF00CD400747332 /* EventMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventMainViewController.h; sourceTree = "<group>"; };
-		FCCAD6B11AF00CD400747332 /* EventMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventMainViewController.m; sourceTree = "<group>"; };
+		FCCAD6B01AF00CD400747332 /* AddEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddEventViewController.h; sourceTree = "<group>"; };
+		FCCAD6B11AF00CD400747332 /* AddEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddEventViewController.m; sourceTree = "<group>"; };
 		FCCAD6B41AF00CD400747332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCCAD6B61AF00CD400747332 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCCAD6B91AF00CD400747332 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 		FC67DE631AF67D0200F919CB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FCCAD6B01AF00CD400747332 /* EventMainViewController.h */,
-				FCCAD6B11AF00CD400747332 /* EventMainViewController.m */,
+				FCCAD6B01AF00CD400747332 /* AddEventViewController.h */,
+				FCCAD6B11AF00CD400747332 /* AddEventViewController.m */,
 				FCCDDDB01AF52310001B6967 /* EventTableViewController.h */,
 				FCCDDDB11AF52310001B6967 /* EventTableViewController.m */,
 			);
@@ -501,7 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */,
+				FCCAD6B21AF00CD400747332 /* AddEventViewController.m in Sources */,
 				FCCDDDC01AF537D4001B6967 /* Appearance.m in Sources */,
 				FCCAD6AF1AF00CD400747332 /* EventsAppDelegate.m in Sources */,
 				FCCDDDB21AF52310001B6967 /* EventTableViewController.m in Sources */,

@@ -24,7 +24,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EventMainViewController : UIViewController
+@interface AddEventViewController : UIViewController
 
 
 @end

@@ -79,7 +79,7 @@
         <!--Title-->
         <scene sceneID="6WF-ex-V03">
             <objects>
-                <viewController id="Ry2-eO-mRB" customClass="EventMainViewController" sceneMemberID="viewController">
+                <viewController id="Ry2-eO-mRB" customClass="AddEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OBo-Qb-0DM"/>
                         <viewControllerLayoutGuide type="bottom" id="A8z-9q-Y5D"/>

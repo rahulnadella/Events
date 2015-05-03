@@ -35,7 +35,7 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     
-    [self findNextClosetEventByDate];
+    [self findNextClosestEventByDate];
 }
 
 - (void)didDeactivate
@@ -44,7 +44,7 @@
     [super didDeactivate];
 }
 
-- (void)findNextClosetEventByDate
+- (void)findNextClosestEventByDate
 {
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
     NSData *encodedObject = [userDefaults objectForKey:@"EventList"];

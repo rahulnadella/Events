@@ -44,10 +44,9 @@
 
 - (void)setupTable
 {
-    //    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
-    //    NSData *encodedObject = [userDefaults objectForKey:@"EventList"];
-    //    _eventsData = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-    _eventsData = [Event eventsList];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
+    NSData *encodedObject = [userDefaults objectForKey:@"EventList"];
+    _eventsData = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     
     NSMutableArray *rowTypesList = [NSMutableArray array];
     

@@ -200,6 +200,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FC67DE621AF67CBB00F919CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC117A891AF582E900B28C50 /* Event.h */,
+				FC117A8A1AF582E900B28C50 /* Event.m */,
+				FC117A8B1AF582E900B28C50 /* ImportantEventRow.h */,
+				FC117A8C1AF582E900B28C50 /* ImportantEventRow.m */,
+				FC117A8D1AF582E900B28C50 /* OrdinaryEventRow.h */,
+				FC117A8E1AF582E900B28C50 /* OrdinaryEventRow.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FC67DE631AF67D0200F919CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FCCAD6B01AF00CD400747332 /* EventMainViewController.h */,
+				FCCAD6B11AF00CD400747332 /* EventMainViewController.m */,
+				FCCDDDB01AF52310001B6967 /* EventTableViewController.h */,
+				FCCDDDB11AF52310001B6967 /* EventTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		FCCAD69D1AF00CD300747332 = {
 			isa = PBXGroup;
 			children = (
@@ -225,26 +249,13 @@
 		FCCAD6A81AF00CD400747332 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				FC117A891AF582E900B28C50 /* Event.h */,
-				FC117A8A1AF582E900B28C50 /* Event.m */,
-				FC117A8B1AF582E900B28C50 /* ImportantEventRow.h */,
-				FC117A8C1AF582E900B28C50 /* ImportantEventRow.m */,
-				FC117A8D1AF582E900B28C50 /* OrdinaryEventRow.h */,
-				FC117A8E1AF582E900B28C50 /* OrdinaryEventRow.m */,
+				FC67DE631AF67D0200F919CB /* Controller */,
+				FCCDDDB61AF52585001B6967 /* Custom Cell */,
+				FC67DE621AF67CBB00F919CB /* Model */,
 				FCCDDDBA1AF53625001B6967 /* Style */,
-				FC838CE21AF3CFE100B19E3A /* Events.entitlements */,
-				FCCAD6AD1AF00CD400747332 /* EventsAppDelegate.h */,
-				FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */,
-				FCCAD6B01AF00CD400747332 /* EventMainViewController.h */,
-				FCCAD6B11AF00CD400747332 /* EventMainViewController.m */,
-				FCCDDDB01AF52310001B6967 /* EventTableViewController.h */,
-				FCCDDDB11AF52310001B6967 /* EventTableViewController.m */,
-				FC67DE5F1AF6689000F919CB /* EventUtil.h */,
-				FC67DE601AF6689000F919CB /* EventUtil.m */,
 				FCCAD6B31AF00CD400747332 /* Main.storyboard */,
 				FCCAD6B61AF00CD400747332 /* Images.xcassets */,
 				FCCAD6B81AF00CD400747332 /* LaunchScreen.xib */,
-				FCCDDDB61AF52585001B6967 /* Custom Cell */,
 				FCCAD6A91AF00CD400747332 /* Supporting Files */,
 			);
 			path = Events;
@@ -253,7 +264,12 @@
 		FCCAD6A91AF00CD400747332 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC838CE21AF3CFE100B19E3A /* Events.entitlements */,
+				FCCAD6AD1AF00CD400747332 /* EventsAppDelegate.h */,
+				FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */,
 				FCCDDDC11AF53906001B6967 /* Events-Prefix.pch */,
+				FC67DE5F1AF6689000F919CB /* EventUtil.h */,
+				FC67DE601AF6689000F919CB /* EventUtil.m */,
 				FCCDDDB81AF52E13001B6967 /* events.plist */,
 				FCCAD6AA1AF00CD400747332 /* Info.plist */,
 				FCCAD6AB1AF00CD400747332 /* main.m */,

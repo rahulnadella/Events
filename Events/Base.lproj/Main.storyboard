@@ -64,11 +64,70 @@
                             <outlet property="delegate" destination="UDC-b8-ocL" id="jXw-Ul-oRf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4Qi-FT-RuV"/>
+                    <navigationItem key="navigationItem" id="4Qi-FT-RuV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jg6-f1-rma">
+                            <connections>
+                                <segue destination="Ry2-eO-mRB" kind="show" identifier="Add Event" id="eAe-7B-oAf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="byQ-Sp-jjN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="927" y="-601"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="6WF-ex-V03">
+            <objects>
+                <viewController id="Ry2-eO-mRB" customClass="EventMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OBo-Qb-0DM"/>
+                        <viewControllerLayoutGuide type="bottom" id="A8z-9q-Y5D"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PbJ-gx-xvq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hS6-cE-FOp">
+                                <rect key="frame" x="16" y="72" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpM-hC-gra">
+                                <rect key="frame" x="61" y="68" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agx-ZP-bfI">
+                                <rect key="frame" x="11" y="110" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhW-EE-aNM">
+                                <rect key="frame" x="61" y="106" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="2ot-xO-KEN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="itg-ed-a4S">
+                            <connections>
+                                <action selector="save:" destination="Ry2-eO-mRB" id="pmc-m9-9da"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="yhW-EE-aNM" id="k0p-XW-vJC"/>
+                        <outlet property="titleLabel" destination="SpM-hC-gra" id="n71-CH-m0T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0r-Dq-yJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1725" y="-601"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hOP-YW-UGM">

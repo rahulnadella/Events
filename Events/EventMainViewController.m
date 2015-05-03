@@ -23,8 +23,12 @@
  */
 
 #import "EventMainViewController.h"
+#import "Event.h"
 
 @interface EventMainViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *dateLabel;
 
 @end
 
@@ -41,6 +45,31 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.titleLabel becomeFirstResponder];
+    [self.dateLabel becomeFirstResponder];
 }
+
+- (IBAction)save:(UIBarButtonItem *)sender
+{
+    Event *event = [[Event alloc] init];
+    [event setEventTitle:self.titleLabel.text];
+    [event setEventTime:self.dateLabel.text];
+    
+    [globalEvents addObject:event];
+    
+    NSUserDefaults *globalDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *globalEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
+    [globalDefaults setObject:globalEncodedObject forKey:@"GlobalEventList"];
+    [globalDefaults synchronize];
+    
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
+    [userDefaults setObject:myEncodedObject forKey:@"EventList"];
+    [userDefaults synchronize];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end

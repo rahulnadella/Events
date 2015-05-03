@@ -8,6 +8,7 @@
 
 #import "EventTableViewController.h"
 #import "Event.h"
+#import "EventMainViewController.h"
 #import "EventTableViewCell.h"
 
 @interface EventTableViewController ()
@@ -28,12 +29,21 @@
     
     [self.navigationItem setTitle:@"Events"];
     
-    [self synchronizeEventList];
+    [EventTableViewController synchronizeEventList];
     
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
     NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
     [userDefaults setObject:myEncodedObject forKey:@"EventList"];
     [userDefaults synchronize];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [EventTableViewController synchronizeEventList];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -66,7 +76,7 @@
     return eventCell;
 }
 
-- (void)synchronizeEventList
++ (void)synchronizeEventList
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [userDefaults objectForKey:@"GlobalEventList"];
@@ -78,6 +88,18 @@
         NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
         [userDefaults setObject:myEncodedObject forKey:@"GlobalEventList"];
         [userDefaults synchronize];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"Add Event"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[EventMainViewController class]])
+        {
+            EventMainViewController *emvc = segue.destinationViewController;
+            [emvc setTitle:@"Add Event"];
+        }
     }
 }
 

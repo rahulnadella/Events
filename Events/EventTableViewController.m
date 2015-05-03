@@ -7,11 +7,14 @@
 //
 
 #import "EventTableViewController.h"
-#import "Event.h"
 #import "AddEventViewController.h"
+#import "Event.h"
 #import "EventTableViewCell.h"
+#import "MMWormhole.h"
 
 @interface EventTableViewController ()
+
+@property (nonatomic, strong) MMWormhole *wormhole;
 
 @end
 

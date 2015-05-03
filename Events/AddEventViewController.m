@@ -24,11 +24,13 @@
 
 #import "AddEventViewController.h"
 #import "Event.h"
+#import "MMWormhole.h"
 
 @interface AddEventViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *dateLabel;
+@property (nonatomic, strong) MMWormhole *wormhole;
 
 @end
 
@@ -67,6 +69,10 @@
     NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
     [userDefaults setObject:myEncodedObject forKey:@"EventList"];
     [userDefaults synchronize];
+    
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.openSource" optionalDirectory:@"wormhole"];
+    
+    [self.wormhole passMessageObject:globalEvents identifier:@"globalEvents"];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

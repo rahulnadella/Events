@@ -9,18 +9,37 @@
 #import "HomeInterfaceController.h"
 #import "Event.h"
 #import "ImportantEventRow.h"
+#import "MMWormhole.h"
 #import "OrdinaryEventRow.h"
 
 @interface HomeInterfaceController()
 
 @property (nonatomic, strong) NSArray *eventsData;
-
+@property (nonatomic, strong) MMWormhole *wormhole;
 @end
 
 
 @implementation HomeInterfaceController
 
 @synthesize tableView;
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.openSource" optionalDirectory:@"wormhole"];
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        _eventsData = events;
+        
+        [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
+            NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+            _eventsData = events;
+        }];
+    }
+    return self;
+}
 
 - (void)awakeWithContext:(id)context
 {
@@ -34,20 +53,24 @@
 {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    
+    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        _eventsData = events;
+        [self setupTable];
+    }];
 }
 
 - (void)didDeactivate
 {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+    
+    [self.wormhole stopListeningForMessageWithIdentifier:@"globalEvents"];
 }
 
 - (void)setupTable
 {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
-    NSData *encodedObject = [userDefaults objectForKey:@"EventList"];
-    _eventsData = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-    
     NSMutableArray *rowTypesList = [NSMutableArray array];
     
     for (Event *event in _eventsData)

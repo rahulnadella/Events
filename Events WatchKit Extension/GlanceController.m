@@ -45,7 +45,9 @@
 
 - (void)findNextClosetEventByDate
 {
-    _eventsData = [Event eventsList];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
+    NSData *encodedObject = [userDefaults objectForKey:@"EventList"];
+    _eventsData = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     
     NSInteger closetDay = 0;
     Event *closestEvent;

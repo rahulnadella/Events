@@ -12,8 +12,6 @@
 
 @interface EventTableViewController ()
 
-@property (nonatomic, strong) NSArray *eventData;
-
 @end
 
 @implementation EventTableViewController
@@ -30,10 +28,10 @@
     
     [self.navigationItem setTitle:@"Events"];
     
-    self.eventData = [Event eventsList];
+    [self synchronizeEventList];
     
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:self.eventData];
+    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
     [userDefaults setObject:myEncodedObject forKey:@"EventList"];
     [userDefaults synchronize];
 }
@@ -47,14 +45,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.eventData count];
+    return [globalEvents count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     EventTableViewCell *eventCell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
     
-    Event *event = self.eventData[indexPath.row];
+    Event *event = globalEvents[indexPath.row];
     eventCell.eventTitle.text = event.eventTitle;
     eventCell.eventSubTitle.text = event.eventTime;
     eventCell.eventImage.image = [UIImage imageNamed:event.eventImageName];
@@ -68,5 +66,19 @@
     return eventCell;
 }
 
+- (void)synchronizeEventList
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [userDefaults objectForKey:@"GlobalEventList"];
+    globalEvents = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    
+    if (!globalEvents)
+    {
+        globalEvents = [[Event eventsList] mutableCopy];
+        NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
+        [userDefaults setObject:myEncodedObject forKey:@"GlobalEventList"];
+        [userDefaults synchronize];
+    }
+}
 
 @end

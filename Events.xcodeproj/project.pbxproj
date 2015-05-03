@@ -22,6 +22,7 @@
 		FC117AF31AF5893000B28C50 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117A8A1AF582E900B28C50 /* Event.m */; };
 		FC117AF41AF5893F00B28C50 /* OrdinaryEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117A8E1AF582E900B28C50 /* OrdinaryEventRow.m */; };
 		FC117AF61AF589BA00B28C50 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCDDDB81AF52E13001B6967 /* events.plist */; };
+		FC67DE611AF6689000F919CB /* EventUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FC67DE601AF6689000F919CB /* EventUtil.m */; };
 		FCCAD6AC1AF00CD400747332 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AB1AF00CD400747332 /* main.m */; };
 		FCCAD6AF1AF00CD400747332 /* EventsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6AE1AF00CD400747332 /* EventsAppDelegate.m */; };
 		FCCAD6B21AF00CD400747332 /* EventMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCAD6B11AF00CD400747332 /* EventMainViewController.m */; };
@@ -105,6 +106,8 @@
 		FC117AE41AF584CC00B28C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FC117AE61AF584CC00B28C50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FC117AF71AF5AB4C00B28C50 /* Events WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Events WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		FC67DE5F1AF6689000F919CB /* EventUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventUtil.h; sourceTree = "<group>"; };
+		FC67DE601AF6689000F919CB /* EventUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventUtil.m; sourceTree = "<group>"; };
 		FC838CE21AF3CFE100B19E3A /* Events.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Events.entitlements; sourceTree = "<group>"; };
 		FCCAD6A61AF00CD400747332 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCAD6AA1AF00CD400747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				FCCAD6B11AF00CD400747332 /* EventMainViewController.m */,
 				FCCDDDB01AF52310001B6967 /* EventTableViewController.h */,
 				FCCDDDB11AF52310001B6967 /* EventTableViewController.m */,
+				FC67DE5F1AF6689000F919CB /* EventUtil.h */,
+				FC67DE601AF6689000F919CB /* EventUtil.m */,
 				FCCAD6B31AF00CD400747332 /* Main.storyboard */,
 				FCCAD6B61AF00CD400747332 /* Images.xcassets */,
 				FCCAD6B81AF00CD400747332 /* LaunchScreen.xib */,
@@ -484,6 +489,7 @@
 				FCCDDDC01AF537D4001B6967 /* Appearance.m in Sources */,
 				FCCAD6AF1AF00CD400747332 /* EventsAppDelegate.m in Sources */,
 				FCCDDDB21AF52310001B6967 /* EventTableViewController.m in Sources */,
+				FC67DE611AF6689000F919CB /* EventUtil.m in Sources */,
 				FC117A911AF582E900B28C50 /* OrdinaryEventRow.m in Sources */,
 				FCCAD6AC1AF00CD400747332 /* main.m in Sources */,
 				FCCDDDB51AF52580001B6967 /* EventTableViewCell.m in Sources */,
@@ -774,6 +780,7 @@
 				FC117AED1AF584CC00B28C50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FC117AEE1AF584CC00B28C50 /* Build configuration list for PBXNativeTarget "Events WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -782,6 +789,7 @@
 				FC117AF01AF584CC00B28C50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCCAD6A11AF00CD300747332 /* Build configuration list for PBXProject "Events" */ = {
 			isa = XCConfigurationList;

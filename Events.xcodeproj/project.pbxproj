@@ -104,6 +104,7 @@
 		FC117AE21AF584CC00B28C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC117AE41AF584CC00B28C50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FC117AE61AF584CC00B28C50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FC117AF71AF5AB4C00B28C50 /* Events WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Events WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		FC838CE21AF3CFE100B19E3A /* Events.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Events.entitlements; sourceTree = "<group>"; };
 		FCCAD6A61AF00CD400747332 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCCAD6AA1AF00CD400747332 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		FC117ACB1AF584CC00B28C50 /* Events WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FC117AF71AF5AB4C00B28C50 /* Events WatchKit Extension.entitlements */,
 				FC117ACF1AF584CC00B28C50 /* HomeInterfaceController.h */,
 				FC117AD01AF584CC00B28C50 /* HomeInterfaceController.m */,
 				FC117AD21AF584CC00B28C50 /* NotificationController.h */,
@@ -375,6 +377,11 @@
 					FC117AC91AF584CC00B28C50 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 3T9G834Z4J;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FC117ADB1AF584CC00B28C50 = {
 						CreatedOnToolsVersion = 6.2;
@@ -574,6 +581,7 @@
 		FC117AEF1AF584CC00B28C50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Events WatchKit Extension/Events WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -583,6 +591,7 @@
 				INFOPLIST_FILE = "Events WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -590,11 +599,13 @@
 		FC117AF01AF584CC00B28C50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Events WatchKit Extension/Events WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Events WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

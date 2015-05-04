@@ -76,10 +76,13 @@
     
     [self.navigationItem setTitle:@"Events"];
     
+    /* Synchronize the List of current Events */
     [self synchronizeEventList];
     
+    /* Check to see if any Events have been Add or Removed */
     [self listenToEvents];
     
+    /* Reload the TableView */
     [self.tableView reloadData];
 }
 
@@ -163,16 +166,12 @@
 
 - (void)synchronizeEventList
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *encodedObject = [userDefaults objectForKey:GLOBAL_EVENT_LIST];
-    globalEvents = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
+    globalEvents = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
     
     if (!globalEvents)
     {
         globalEvents = [[Event eventsList] mutableCopy];
-        NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
-        [userDefaults setObject:myEncodedObject forKey:GLOBAL_EVENT_LIST];
-        [userDefaults synchronize];
     }
 }
 

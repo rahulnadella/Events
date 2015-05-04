@@ -33,12 +33,16 @@
 
 @property (nonatomic, strong) NSArray *eventsData;
 @property (nonatomic, strong) MMWormhole *wormhole;
-@end
 
+@end
 
 @implementation EventTableInterfaceController
 
+# pragma mark - Properties
+
 @synthesize tableView;
+
+# pragma mark - Initialization (Constructor)
 
 - (instancetype)init
 {
@@ -58,6 +62,8 @@
     return self;
 }
 
+# pragma mark - AwakeWithContext
+
 - (void)awakeWithContext:(id)context
 {
     [super awakeWithContext:context];
@@ -65,6 +71,8 @@
     // Configure interface objects here.
     [self setupTable];
 }
+
+# pragma mark - Activate
 
 - (void)willActivate
 {
@@ -78,6 +86,8 @@
     }];
 }
 
+# pragma mark - Deactivate
+
 - (void)didDeactivate
 {
     // This method is called when watch view controller is no longer visible
@@ -85,6 +95,8 @@
     
     [self.wormhole stopListeningForMessageWithIdentifier:GLOBAL_EVENTS];
 }
+
+# pragma mark - Initialize TableView
 
 - (void)setupTable
 {
@@ -124,6 +136,8 @@
         }
     }
 }
+
+# pragma mark - Prepare Segue
 
 - (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex
 {

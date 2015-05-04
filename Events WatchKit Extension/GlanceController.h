@@ -25,6 +25,11 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
+/*
+ The GlanceController class provides a snapshot of the previous or next Event.
+ 
+ @version 1.0
+ */
 @interface GlanceController : WKInterfaceController
 
 @end

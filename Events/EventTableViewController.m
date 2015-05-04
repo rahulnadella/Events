@@ -132,7 +132,7 @@
     return eventCell;
 }
 
-# pragma mark - Segue
+# pragma mark - Prepare Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

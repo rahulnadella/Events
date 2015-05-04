@@ -25,6 +25,11 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
+/*
+ The NotificationController class provides notification user interface for the Events.
+ 
+ @version 1.0
+ */
 @interface NotificationController : WKUserNotificationInterfaceController
 
 @end

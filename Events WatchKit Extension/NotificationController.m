@@ -24,17 +24,19 @@
 
 #import "NotificationController.h"
 
-
 @interface NotificationController()
 
 @end
 
-
 @implementation NotificationController
 
-- (instancetype)init {
+# pragma mark - Initialization (Constructor)
+
+- (instancetype)init
+{
     self = [super init];
-    if (self){
+    if (self)
+    {
         // Initialize variables here.
         // Configure interface objects here.
         
@@ -42,12 +44,18 @@
     return self;
 }
 
-- (void)willActivate {
+# pragma mark - Activate
+
+- (void)willActivate
+{
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }
 
-- (void)didDeactivate {
+# pragma mark - Deactivate
+
+- (void)didDeactivate
+{
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }

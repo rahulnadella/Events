@@ -24,9 +24,13 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
-
+/*
+ The EventTableInterfaceController class is the main user interface of the Events WatchKit application.
+ 
+ @version 1.0
+ */
 @interface EventTableInterfaceController : WKInterfaceController
-
+/* The tableView of the interface controller */
 @property (nonatomic, strong) IBOutlet WKInterfaceTable *tableView;
 
 @end

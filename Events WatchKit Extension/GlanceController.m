@@ -38,8 +38,9 @@
 
 @end
 
-
 @implementation GlanceController
+
+# pragma mark - Initialization (Constructor)
 
 - (instancetype)init
 {
@@ -60,6 +61,7 @@
     return self;
 }
 
+# pragma mark - AwakeWithContext
 
 - (void)awakeWithContext:(id)context
 {
@@ -73,6 +75,8 @@
     }];
 }
 
+# pragma mark - Activate
+
 - (void)willActivate
 {
     // This method is called when watch view controller is about to be visible to user
@@ -81,11 +85,15 @@
     [self findNextClosestEventByDate];
 }
 
+# pragma mark - Deactivate
+
 - (void)didDeactivate
 {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
+
+# pragma mark - FindNextClosetEventByDate
 
 - (void)findNextClosestEventByDate
 {

@@ -24,16 +24,17 @@
 
 #import "EventDetailsInterfaceController.h"
 
-
 @interface EventDetailsInterfaceController()
+
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *subTitle;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *eventImage;
 
 @end
 
-
 @implementation EventDetailsInterfaceController
+
+# pragma mark - AwakeWithContext
 
 - (void)awakeWithContext:(id)context
 {
@@ -54,11 +55,15 @@
     }
 }
 
+# pragma mark - Activate
+
 - (void)willActivate
 {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
 }
+
+# pragma mark - Deactivate
 
 - (void)didDeactivate
 {

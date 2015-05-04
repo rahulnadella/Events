@@ -25,7 +25,11 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 #import "Event.h"
-
+/*
+ The EventDetailsInterfaceController class shows the specific details of a particular Event.
+ 
+ @version 1.0
+ */
 @interface EventDetailsInterfaceController : WKInterfaceController
 
 @end

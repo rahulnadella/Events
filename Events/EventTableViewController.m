@@ -87,8 +87,10 @@
 {
     [super viewWillAppear:animated];
     
+    /* Check to see if any Events have been Add or Removed */
     [self listenToEvents];
     
+    /* Reload the TableView */
     [self.tableView reloadData];
 }
 

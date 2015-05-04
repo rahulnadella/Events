@@ -29,12 +29,12 @@
     
     if (self)
     {
-        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.openSource" optionalDirectory:@"wormhole"];
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
         
-        [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
-            NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
+            NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
             _eventsData = events;
         }];
     }
@@ -54,8 +54,8 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     
-    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+    [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
         [self setupTable];
     }];
@@ -66,7 +66,7 @@
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
     
-    [self.wormhole stopListeningForMessageWithIdentifier:@"globalEvents"];
+    [self.wormhole stopListeningForMessageWithIdentifier:GLOBAL_EVENTS];
 }
 
 - (void)setupTable
@@ -77,11 +77,11 @@
     {
         if (event.eventImageName.length > 0)
         {
-            [rowTypesList addObject:@"ImportantEventRow"];
+            [rowTypesList addObject:IMPORTANT_EVENT_ROW];
         }
         else
         {
-            [rowTypesList addObject:@"OrdinaryEventRow"];
+            [rowTypesList addObject:ORDINARY_EVENT_ROW];
         }
     }
     

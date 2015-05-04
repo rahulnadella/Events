@@ -31,13 +31,13 @@
     
     if (self)
     {
-        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.openSource" optionalDirectory:@"wormhole"];
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
         
-        [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject)
+        [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject)
         {
-            NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+            NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
             _eventsData = events;
         }];
     }
@@ -50,8 +50,8 @@
     [super awakeWithContext:context];
     
     // Configure interface objects here.
-    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+    [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
         [self findNextClosestEventByDate];
     }];

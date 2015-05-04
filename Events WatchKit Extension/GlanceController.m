@@ -9,6 +9,7 @@
 #import "GlanceController.h"
 #import "Event.h"
 #import "ImportantEventRow.h"
+#import "MMWormhole.h"
 #import "OrdinaryEventRow.h"
 
 @interface GlanceController()
@@ -17,17 +18,43 @@
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *eventImage;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *eventTitle;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *eventSubTitle;
+@property (nonatomic, strong) MMWormhole *wormhole;
 
 @end
 
 
 @implementation GlanceController
 
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.openSource" optionalDirectory:@"wormhole"];
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        _eventsData = events;
+        
+        [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject)
+        {
+            NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+            _eventsData = events;
+        }];
+    }
+    return self;
+}
+
+
 - (void)awakeWithContext:(id)context
 {
     [super awakeWithContext:context];
     
     // Configure interface objects here.
+    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        _eventsData = events;
+        [self findNextClosestEventByDate];
+    }];
 }
 
 - (void)willActivate
@@ -46,10 +73,6 @@
 
 - (void)findNextClosestEventByDate
 {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
-    NSData *encodedObject = [userDefaults objectForKey:@"EventList"];
-    _eventsData = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
-    
     NSInteger closetDay = 0;
     Event *closestEvent;
     for (Event *event in _eventsData)

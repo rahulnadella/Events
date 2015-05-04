@@ -19,6 +19,8 @@ NSString * const APPLICATION_GROUP_IDENTIFIER = @"group.com.openSource";
 NSString * const EVENT_LIST = @"EventList";
 NSString * const GLOBAL_EVENTS = @"globalEvents";
 NSString * const GLOBAL_EVENT_LIST = @"GlobalEventList";
+NSString * const IMPORTANT_EVENT_ROW = @"ImportantEventRow";
 NSString * const OPTIONAL_DIRECTORY = @"wormhole";
+NSString * const ORDINARY_EVENT_ROW = @"OrdinaryEventRow";
 
 @end

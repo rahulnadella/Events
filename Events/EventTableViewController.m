@@ -153,6 +153,25 @@
     [self listenToEvents];
 }
 
+# pragma mark - Table View Move Event
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    NSUInteger sourceIndex = (NSUInteger)[sourceIndexPath row];
+    NSUInteger destinationIndex = (NSUInteger)[destinationIndexPath row];
+    
+    if (sourceIndex != destinationIndex)
+    {
+        NSMutableArray *mutableEvents = [globalEvents mutableCopy];
+        [mutableEvents exchangeObjectAtIndex:sourceIndex withObjectAtIndex:destinationIndex];
+    }
+}
+
 # pragma mark - Prepare Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -672,7 +672,7 @@
 		FC117AEC1AF584CC00B28C50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = EventsWatchKitAppIcon;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -689,7 +689,7 @@
 		FC117AED1AF584CC00B28C50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = EventsWatchKitAppIcon;
 				IBSC_MODULE = Events_WatchKit_Extension;
 				INFOPLIST_FILE = "Events WatchKit App/Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -703,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCB76365D602C19C99CFD1CE /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "Events WatchKit Extension/Events WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -726,6 +727,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3B90514E4B2FBFE95E742C0D /* Pods.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "Events WatchKit Extension/Events WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

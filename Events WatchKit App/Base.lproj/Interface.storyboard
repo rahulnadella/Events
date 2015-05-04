@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>
-        <!--Home Interface Controller-->
+        <!--Event Table Interface Controller-->
         <scene sceneID="9sY-yW-jga">
             <objects>
-                <controller id="1bq-7p-MfW" customClass="HomeInterfaceController">
+                <controller id="1bq-7p-MfW" customClass="EventTableInterfaceController">
                     <items>
                         <table alignment="left" id="eYn-90-Ag6">
                             <items>

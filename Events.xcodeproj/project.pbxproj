@@ -12,7 +12,7 @@
 		FC117A8F1AF582E900B28C50 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117A8A1AF582E900B28C50 /* Event.m */; };
 		FC117A901AF582E900B28C50 /* ImportantEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117A8C1AF582E900B28C50 /* ImportantEventRow.m */; };
 		FC117A911AF582E900B28C50 /* OrdinaryEventRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117A8E1AF582E900B28C50 /* OrdinaryEventRow.m */; };
-		FC117AD11AF584CC00B28C50 /* HomeInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117AD01AF584CC00B28C50 /* HomeInterfaceController.m */; };
+		FC117AD11AF584CC00B28C50 /* EventTableInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117AD01AF584CC00B28C50 /* EventTableInterfaceController.m */; };
 		FC117AD41AF584CC00B28C50 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117AD31AF584CC00B28C50 /* NotificationController.m */; };
 		FC117AD71AF584CC00B28C50 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC117AD61AF584CC00B28C50 /* GlanceController.m */; };
 		FC117AD91AF584CC00B28C50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC117AD81AF584CC00B28C50 /* Images.xcassets */; };
@@ -101,8 +101,8 @@
 		FC117ACA1AF584CC00B28C50 /* Events WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Events WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC117ACD1AF584CC00B28C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC117ACE1AF584CC00B28C50 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		FC117ACF1AF584CC00B28C50 /* HomeInterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeInterfaceController.h; sourceTree = "<group>"; };
-		FC117AD01AF584CC00B28C50 /* HomeInterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeInterfaceController.m; sourceTree = "<group>"; };
+		FC117ACF1AF584CC00B28C50 /* EventTableInterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventTableInterfaceController.h; sourceTree = "<group>"; };
+		FC117AD01AF584CC00B28C50 /* EventTableInterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventTableInterfaceController.m; sourceTree = "<group>"; };
 		FC117AD21AF584CC00B28C50 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
 		FC117AD31AF584CC00B28C50 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		FC117AD51AF584CC00B28C50 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
@@ -192,8 +192,8 @@
 		FC117ACB1AF584CC00B28C50 /* Events WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FC117ACF1AF584CC00B28C50 /* HomeInterfaceController.h */,
-				FC117AD01AF584CC00B28C50 /* HomeInterfaceController.m */,
+				FC117ACF1AF584CC00B28C50 /* EventTableInterfaceController.h */,
+				FC117AD01AF584CC00B28C50 /* EventTableInterfaceController.m */,
 				FC117AD21AF584CC00B28C50 /* NotificationController.h */,
 				FC117AD31AF584CC00B28C50 /* NotificationController.m */,
 				FC117AD51AF584CC00B28C50 /* GlanceController.h */,
@@ -596,7 +596,7 @@
 				FC117AF31AF5893000B28C50 /* Event.m in Sources */,
 				FC117AF21AF5891500B28C50 /* ImportantEventRow.m in Sources */,
 				FC117AD41AF584CC00B28C50 /* NotificationController.m in Sources */,
-				FC117AD11AF584CC00B28C50 /* HomeInterfaceController.m in Sources */,
+				FC117AD11AF584CC00B28C50 /* EventTableInterfaceController.m in Sources */,
 				FC117AD71AF584CC00B28C50 /* GlanceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
-@interface HomeInterfaceController : WKInterfaceController
+@interface EventTableInterfaceController : WKInterfaceController
 
 @property (nonatomic, strong) IBOutlet WKInterfaceTable *tableView;
 

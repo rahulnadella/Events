@@ -6,20 +6,20 @@
 //  Copyright (c) 2015 Rahul Nadella. All rights reserved.
 //
 
-#import "HomeInterfaceController.h"
+#import "EventTableInterfaceController.h"
 #import "Event.h"
 #import "ImportantEventRow.h"
 #import "MMWormhole.h"
 #import "OrdinaryEventRow.h"
 
-@interface HomeInterfaceController()
+@interface EventTableInterfaceController()
 
 @property (nonatomic, strong) NSArray *eventsData;
 @property (nonatomic, strong) MMWormhole *wormhole;
 @end
 
 
-@implementation HomeInterfaceController
+@implementation EventTableInterfaceController
 
 @synthesize tableView;
 
@@ -108,6 +108,12 @@
     }
 }
 
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex
+{
+    
+    
+    return nil;
+}
 
 @end
 

@@ -10,12 +10,33 @@
 #import "AddEventViewController.h"
 #import "Event.h"
 #import "EventTableViewCell.h"
+#import "MMWormhole.h"
 
 @interface EventTableViewController ()
+
+@property (nonatomic, strong) MMWormhole *wormhole;
 
 @end
 
 @implementation EventTableViewController
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.openSource" optionalDirectory:@"wormhole"];
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        globalEvents = events;
+        
+        [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
+            NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+            globalEvents = events;
+        }];
+    }
+    return self;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -31,19 +52,22 @@
     
     [EventTableViewController synchronizeEventList];
     
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.openSource"];
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
-    [userDefaults setObject:myEncodedObject forKey:@"EventList"];
-    [userDefaults synchronize];
+    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        globalEvents = events;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [EventTableViewController synchronizeEventList];
-    
-    [self.tableView reloadData];
+    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        globalEvents = events;
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Table view data source

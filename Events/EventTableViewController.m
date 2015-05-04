@@ -47,7 +47,7 @@
     
     [self.navigationItem setTitle:@"Events"];
     
-    [EventTableViewController synchronizeEventList];
+    [self synchronizeEventList];
     
     [self listenToEvents];
     
@@ -101,7 +101,19 @@
     return eventCell;
 }
 
-+ (void)synchronizeEventList
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:ADD_EVENT_IDENTIFIER])
+    {
+        if ([segue.destinationViewController isKindOfClass:[AddEventViewController class]])
+        {
+            AddEventViewController *emvc = segue.destinationViewController;
+            [emvc setTitle:ADD_EVENT_IDENTIFIER];
+        }
+    }
+}
+
+- (void)synchronizeEventList
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSData *encodedObject = [userDefaults objectForKey:GLOBAL_EVENT_LIST];
@@ -113,18 +125,6 @@
         NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
         [userDefaults setObject:myEncodedObject forKey:GLOBAL_EVENT_LIST];
         [userDefaults synchronize];
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:ADD_EVENT_IDENTIFIER])
-    {
-        if ([segue.destinationViewController isKindOfClass:[AddEventViewController class]])
-        {
-            AddEventViewController *emvc = segue.destinationViewController;
-            [emvc setTitle:ADD_EVENT_IDENTIFIER];
-        }
     }
 }
 

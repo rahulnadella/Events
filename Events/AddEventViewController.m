@@ -65,11 +65,6 @@
     [globalDefaults setObject:globalEncodedObject forKey:GLOBAL_EVENT_LIST];
     [globalDefaults synchronize];
     
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APPLICATION_GROUP_IDENTIFIER];
-    NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
-    [userDefaults setObject:myEncodedObject forKey:EVENT_LIST];
-    [userDefaults synchronize];
-    
     self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
     
     [self.wormhole passMessageObject:globalEvents identifier:GLOBAL_EVENTS];

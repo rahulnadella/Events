@@ -9,16 +9,20 @@
 #import "EventTableViewController.h"
 #import "AddEventViewController.h"
 #import "Event.h"
+#import "EventDetailsViewController.h"
 #import "EventTableViewCell.h"
 #import "MMWormhole.h"
 
 @interface EventTableViewController ()
 
+@property (nonatomic, strong) Event *event;
 @property (nonatomic, strong) MMWormhole *wormhole;
 
 @end
 
 @implementation EventTableViewController
+
+@synthesize event;
 
 - (instancetype)init
 {
@@ -87,10 +91,10 @@
 {
     EventTableViewCell *eventCell = [tableView dequeueReusableCellWithIdentifier:@"EventCell" forIndexPath:indexPath];
     
-    Event *event = globalEvents[indexPath.row];
-    eventCell.eventTitle.text = event.eventTitle;
-    eventCell.eventSubTitle.text = event.eventTime;
-    eventCell.eventImage.image = [UIImage imageNamed:event.eventImageName];
+    Event *currentEvent = globalEvents[indexPath.row];
+    eventCell.eventTitle.text = currentEvent.eventTitle;
+    eventCell.eventSubTitle.text = currentEvent.eventTime;
+    eventCell.eventImage.image = [UIImage imageNamed:currentEvent.eventImageName];
     
     /* Change the selection style color of the CategoryCell */
     UIView *bgColorView = [[UIView alloc] init];
@@ -103,12 +107,25 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    /* Retrieve the current Event being selected by the user */
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    self.event = globalEvents[indexPath.row];
+    
     if ([segue.identifier isEqualToString:ADD_EVENT_IDENTIFIER])
     {
         if ([segue.destinationViewController isKindOfClass:[AddEventViewController class]])
         {
             AddEventViewController *emvc = segue.destinationViewController;
             [emvc setTitle:ADD_EVENT_IDENTIFIER];
+        }
+    }
+    else if ([segue.identifier isEqualToString:@"Event Details"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[EventDetailsViewController class]])
+        {
+            EventDetailsViewController *edvc = segue.destinationViewController;
+            [edvc setTitle:@"Event Details"];
+            [edvc setCurrentEvent:self.event];
         }
     }
 }

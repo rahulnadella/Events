@@ -37,6 +37,7 @@
 		FCCDDDB51AF52580001B6967 /* EventTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDB41AF52580001B6967 /* EventTableViewCell.m */; };
 		FCCDDDB91AF52E13001B6967 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCDDDB81AF52E13001B6967 /* events.plist */; };
 		FCCDDDC01AF537D4001B6967 /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDBF1AF537D4001B6967 /* Appearance.m */; };
+		FCDF197A1AF7DAC200706528 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDF19791AF7DAC200706528 /* EventDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,8 @@
 		FCCDDDBE1AF537D4001B6967 /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
 		FCCDDDBF1AF537D4001B6967 /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
 		FCCDDDC11AF53906001B6967 /* Events-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Events-Prefix.pch"; sourceTree = "<group>"; };
+		FCDF19781AF7DAC200706528 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
+		FCDF19791AF7DAC200706528 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +252,8 @@
 				FCCAD6B11AF00CD400747332 /* AddEventViewController.m */,
 				FCCDDDB01AF52310001B6967 /* EventTableViewController.h */,
 				FCCDDDB11AF52310001B6967 /* EventTableViewController.m */,
+				FCDF19781AF7DAC200706528 /* EventDetailsViewController.h */,
+				FCDF19791AF7DAC200706528 /* EventDetailsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -608,6 +613,7 @@
 				FC117A911AF582E900B28C50 /* OrdinaryEventRow.m in Sources */,
 				FCCAD6AC1AF00CD400747332 /* main.m in Sources */,
 				FCCDDDB51AF52580001B6967 /* EventTableViewCell.m in Sources */,
+				FCDF197A1AF7DAC200706528 /* EventDetailsViewController.m in Sources */,
 				FC117A901AF582E900B28C50 /* ImportantEventRow.m in Sources */,
 				FC117A8F1AF582E900B28C50 /* Event.m in Sources */,
 			);
@@ -836,10 +842,7 @@
 				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Events/Events-Prefix.pch";
 				INFOPLIST_FILE = Events/Info.plist;
@@ -858,10 +861,7 @@
 				CODE_SIGN_ENTITLEMENTS = Events/Events.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/EventsFramework-faupdcpbptillnacxajlqpxcbihp/Build/Products/Debug-iphonesimulator",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Events/Events-Prefix.pch";
 				INFOPLIST_FILE = Events/Info.plist;
@@ -875,10 +875,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -894,10 +891,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = EventsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

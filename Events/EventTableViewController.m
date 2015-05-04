@@ -134,6 +134,25 @@
     return eventCell;
 }
 
+# pragma mark - Table View Commit Edit Style
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        /* Delete the row from the data source */
+        NSMutableArray *mutableEvents = [globalEvents mutableCopy];
+        [mutableEvents removeObjectAtIndex:[indexPath row]];
+        globalEvents = mutableEvents;
+        
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
+        [self.wormhole passMessageObject:globalEvents identifier:GLOBAL_EVENTS];
+        
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    [self listenToEvents];
+}
+
 # pragma mark - Prepare Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -171,6 +190,22 @@
     if (!globalEvents)
     {
         globalEvents = [[Event eventsList] mutableCopy];
+    }
+}
+
+# pragma mark - Edit Button
+
+- (IBAction)editEvents:(id)sender
+{
+    if([self isEditing])
+    {
+        [sender setTitle:@"Edit"];
+        [self setEditing:NO animated:YES];
+    }
+    else
+    {
+        [sender setTitle:@"Done"];
+        [self setEditing:YES animated:YES];
     }
 }
 

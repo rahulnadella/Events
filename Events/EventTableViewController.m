@@ -30,10 +30,7 @@
         NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
         globalEvents = events;
         
-        [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
-            NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
-            globalEvents = events;
-        }];
+        [self listenToEvents];
     }
     return self;
 }
@@ -52,21 +49,25 @@
     
     [EventTableViewController synchronizeEventList];
     
-    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
-        globalEvents = events;
-        [self.tableView reloadData];
-    }];
+    [self listenToEvents];
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
+    [self listenToEvents];
+    
+    [self.tableView reloadData];
+}
+
+- (void)listenToEvents
+{
     [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
         NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
         globalEvents = events;
-        [self.tableView reloadData];
     }];
 }
 

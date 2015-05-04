@@ -49,6 +49,7 @@
                                     <connections>
                                         <outlet property="timeLabel" destination="Au7-nZ-tbX" id="lvq-oq-aA5"/>
                                         <outlet property="titleLabel" destination="j5q-bd-bdf" id="B6C-YC-QWJ"/>
+                                        <segue destination="9bd-42-Jgc" kind="push" identifier="Event Details Ordinary" id="gaX-yQ-Sq5"/>
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="ImportantEventRow" id="RmI-yI-x5f" customClass="ImportantEventRow">
@@ -72,6 +73,7 @@
                                         <outlet property="eventImage" destination="8lN-pg-eTk" id="Gtz-kA-daM"/>
                                         <outlet property="timeLabel" destination="Zmy-sJ-c5c" id="0lU-Rg-olP"/>
                                         <outlet property="titleLabel" destination="BSb-f8-AS3" id="GZF-mC-VVi"/>
+                                        <segue destination="9bd-42-Jgc" kind="push" identifier="Event Details Important" id="iiV-mJ-XU7"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -83,6 +85,37 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--EventDetailsInterfaceController-->
+        <scene sceneID="lsh-Gd-hPh">
+            <objects>
+                <controller identifier="EventDetailsInterfaceController" id="9bd-42-Jgc" customClass="EventDetailsInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="DHU-sO-FDe">
+                            <items>
+                                <label alignment="center" text="Label" id="4cm-jW-fDH">
+                                    <color key="textColor" red="1" green="0.043650754360000002" blue="0.17739800920000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                </label>
+                                <label alignment="center" text="Label" id="OMy-O6-Lpj">
+                                    <fontDescription key="font" type="system" weight="light" pointSize="13"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" height="73" alignment="left" id="6Wh-NH-2ge">
+                            <items>
+                                <imageView alignment="center" verticalAlignment="center" id="v5U-WL-Wvf"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="eventImage" destination="v5U-WL-Wvf" id="J0d-GQ-ypC"/>
+                        <outlet property="subTitle" destination="OMy-O6-Lpj" id="4md-ZY-JKv"/>
+                        <outlet property="titleLabel" destination="4cm-jW-fDH" id="WPj-5Y-2pF"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="553" y="347"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="gsk-Vb-PCS">
@@ -117,4 +150,7 @@
             <point key="canvasLocation" x="235" y="673"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gaX-yQ-Sq5"/>
+    </inferredMetricsTieBreakers>
 </document>

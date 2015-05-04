@@ -38,6 +38,7 @@
 		FCCDDDB91AF52E13001B6967 /* events.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCCDDDB81AF52E13001B6967 /* events.plist */; };
 		FCCDDDC01AF537D4001B6967 /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCDDDBF1AF537D4001B6967 /* Appearance.m */; };
 		FCDF197A1AF7DAC200706528 /* EventDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDF19791AF7DAC200706528 /* EventDetailsViewController.m */; };
+		FCDF197D1AF7FA5700706528 /* EventDetailsInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCDF197C1AF7FA5700706528 /* EventDetailsInterfaceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		FCCDDDC11AF53906001B6967 /* Events-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Events-Prefix.pch"; sourceTree = "<group>"; };
 		FCDF19781AF7DAC200706528 /* EventDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsViewController.h; sourceTree = "<group>"; };
 		FCDF19791AF7DAC200706528 /* EventDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsViewController.m; sourceTree = "<group>"; };
+		FCDF197B1AF7FA5700706528 /* EventDetailsInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailsInterfaceController.h; sourceTree = "<group>"; };
+		FCDF197C1AF7FA5700706528 /* EventDetailsInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailsInterfaceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 		FC117ACB1AF584CC00B28C50 /* Events WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FCDF197B1AF7FA5700706528 /* EventDetailsInterfaceController.h */,
+				FCDF197C1AF7FA5700706528 /* EventDetailsInterfaceController.m */,
 				FC117ACF1AF584CC00B28C50 /* EventTableInterfaceController.h */,
 				FC117AD01AF584CC00B28C50 /* EventTableInterfaceController.m */,
 				FC117AD21AF584CC00B28C50 /* NotificationController.h */,
@@ -594,6 +599,7 @@
 				FC67DE691AF7CCF900F919CB /* EventUtil.m in Sources */,
 				FC117AF41AF5893F00B28C50 /* OrdinaryEventRow.m in Sources */,
 				FC117AF31AF5893000B28C50 /* Event.m in Sources */,
+				FCDF197D1AF7FA5700706528 /* EventDetailsInterfaceController.m in Sources */,
 				FC117AF21AF5891500B28C50 /* ImportantEventRow.m in Sources */,
 				FC117AD41AF584CC00B28C50 /* NotificationController.m in Sources */,
 				FC117AD11AF584CC00B28C50 /* EventTableInterfaceController.m in Sources */,

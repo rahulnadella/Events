@@ -8,6 +8,7 @@
 
 #import "EventTableInterfaceController.h"
 #import "Event.h"
+#import "EventDetailsInterfaceController.h"
 #import "ImportantEventRow.h"
 #import "MMWormhole.h"
 #import "OrdinaryEventRow.h"
@@ -110,7 +111,34 @@
 
 - (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex
 {
+    /* Retrieve the current Event being selected by the user */
+    NSObject *row = [self.tableView rowControllerAtIndex:rowIndex];
+    Event *event = _eventsData[rowIndex];
     
+    if ([row isKindOfClass:[ImportantEventRow class]])
+    {
+        ImportantEventRow *importantRow = (ImportantEventRow *) row;
+        [importantRow.eventImage setImage:[UIImage imageNamed:event.eventImageName]];
+        [importantRow.titleLabel setText:event.eventTitle];
+        [importantRow.timeLabel setText:event.eventTime];
+        
+        if ([segueIdentifier isEqualToString:@"Event Details Important"])
+        {
+            return event;
+        }
+        
+    }
+    else
+    {
+        OrdinaryEventRow *ordinaryRow = (OrdinaryEventRow *) row;
+        [ordinaryRow.titleLabel setText:event.eventTitle];
+        [ordinaryRow.timeLabel setText:event.eventTime];
+        
+        if ([segueIdentifier isEqualToString:@"Event Details Ordinary"])
+        {
+            return event;
+        }
+    }
     
     return nil;
 }

@@ -26,6 +26,8 @@
 
 @implementation OrdinaryEventRow
 
+# pragma mark - Properties
+
 @synthesize titleLabel;
 @synthesize timeLabel;
 

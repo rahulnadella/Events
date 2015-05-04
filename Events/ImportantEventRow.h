@@ -25,6 +25,11 @@
 #import <Foundation/Foundation.h>
 #import <WatchKit/WatchKit.h>
 
+/*
+ The ImportantEventRow object describes a specific type of row contain the Event object.
+ 
+ @version 1.0
+ */
 @interface ImportantEventRow : NSObject
 
 @property (nonatomic, strong) IBOutlet WKInterfaceLabel *titleLabel;

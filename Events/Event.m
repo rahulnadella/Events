@@ -26,9 +26,13 @@
 
 @implementation Event
 
+# pragma mark - Properties
+
 @synthesize eventTitle;
 @synthesize eventTime;
 @synthesize eventImageName;
+
+# pragma mark - Initialize the Event object
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
@@ -43,6 +47,8 @@
     
     return self;
 }
+
+# pragma mark - Initialization of Event List
 
 + (NSArray *)eventsList
 {
@@ -59,6 +65,8 @@
     
     return [array copy];
 }
+
+# pragma mark - NSCoding protocol
 
 - (void)encodeWithCoder:(NSCoder *)encoder
 {

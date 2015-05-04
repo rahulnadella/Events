@@ -26,6 +26,8 @@
 
 @implementation Appearance
 
+# pragma mark - Customize Navigation Appearance
+
 + (void)customizeNavigationAppearance
 {
     /* Create resizable images */
@@ -54,10 +56,14 @@
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
 }
 
+# pragma mark - Customize Navigation Bar
+
 + (void)customizeNavigationBar
 {
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
+
+# pragma mark - ColorWithHexString method
 
 + (UIColor *)colorWithHexString:(NSString *)hexString
 {

@@ -36,11 +36,15 @@
 
 @implementation AddEventViewController
 
+# pragma mark - Memory Allocation
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+# pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
@@ -50,6 +54,8 @@
     [self.titleLabel becomeFirstResponder];
     [self.dateLabel becomeFirstResponder];
 }
+
+# pragma mark - Save
 
 - (IBAction)save:(UIBarButtonItem *)sender
 {

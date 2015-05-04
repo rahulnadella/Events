@@ -38,7 +38,20 @@
 
 @implementation EventTableViewController
 
+# pragma mark - Properties
+
 @synthesize event;
+
+# pragma mark - Memory Allocation
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+# pragma mark - Initialization (Constructor)
 
 - (instancetype)init
 {
@@ -55,11 +68,7 @@
     return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+# pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
@@ -82,6 +91,8 @@
     
     [self.tableView reloadData];
 }
+
+# pragma mark - Listen to Events
 
 - (void)listenToEvents
 {
@@ -121,6 +132,8 @@
     return eventCell;
 }
 
+# pragma mark - Segue
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     /* Retrieve the current Event being selected by the user */
@@ -145,6 +158,8 @@
         }
     }
 }
+
+# pragma mark - Synchronize Events
 
 - (void)synchronizeEventList
 {

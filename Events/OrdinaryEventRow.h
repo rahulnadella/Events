@@ -25,6 +25,11 @@
 #import <Foundation/Foundation.h>
 #import <WatchKit/WatchKit.h>
 
+/*
+ The OrdinaryEventRow object is a specific type of row that represents the Event object.
+ 
+ @version 1.0
+ */
 @interface OrdinaryEventRow : NSObject
 
 @property (nonatomic, weak) IBOutlet WKInterfaceLabel *titleLabel;

@@ -25,6 +25,7 @@
 #import "EventDetailsViewController.h"
 
 @interface EventDetailsViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *timeTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
@@ -33,13 +34,19 @@
 
 @implementation EventDetailsViewController
 
+# pragma mark - Properties
+
 @synthesize currentEvent;
+
+# pragma mark - Memory Allocation
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+# pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {

@@ -25,6 +25,11 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
+/*
+ The EventDetailsViewController class shows the specific details of a particular Event.
+ 
+ @version 1.0
+ */
 @interface EventDetailsViewController : UIViewController
 
 @property (nonatomic, strong) Event *currentEvent;

@@ -24,12 +24,29 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ The Appearance class provides specific look and feel of the application
+ 
+ @version 1.0
+ */
 @interface Appearance : NSObject
-
+/*
+ The customizeNavigationAppearance method specifies the appearance of the UINavigation menu.
+ 
+ @version 1.0
+ */
 + (void)customizeNavigationAppearance;
-
+/*
+ The customizeNavigationBarColor method specifies the color of the UINavigationBar menu.
+ 
+ @version 1.0
+ */
 + (void)customizeNavigationBar;
-
+/*
+ Converts the hex value of a Color to a UIColor object
+ 
+ @version 1.0
+ */
 + (UIColor *)colorWithHexString:(NSString *)hexString;
 
 @end

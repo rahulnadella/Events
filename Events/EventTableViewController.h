@@ -23,7 +23,12 @@
  */
 
 #import <UIKit/UIKit.h>
-
+/*
+ The EventTableViewController class provides the basic view of all Events 
+ that currently exist.
+ 
+ @version 1.0
+ */
 @interface EventTableViewController : UITableViewController
 
 @end

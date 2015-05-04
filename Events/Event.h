@@ -24,13 +24,30 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ The Event object provides the basic data structure to hold the data for a specific Event.
+ 
+ @version 1.0
+ */
 @interface Event : NSObject
 
 @property (nonatomic, strong) NSString *eventTitle;
 @property (nonatomic, strong) NSString *eventTime;
 @property (nonatomic, strong) NSString *eventImageName;
 
+/* 
+ The initWithDictionary initializes the specific Event objects 
+ (ImportantEventRow or OrdinaryEventRow).
+ 
+ @version 1.0
+ */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+/*
+ The eventList method initializes a list of Event objects.
+ 
+ @version 1.0
+ */
 + (NSArray *)eventsList;
 
 @end

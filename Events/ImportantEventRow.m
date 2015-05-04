@@ -26,6 +26,8 @@
 
 @implementation ImportantEventRow
 
+# pragma mark - Properties
+
 @synthesize titleLabel;
 @synthesize timeLabel;
 @synthesize eventImage;

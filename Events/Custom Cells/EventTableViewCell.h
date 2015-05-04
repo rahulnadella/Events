@@ -24,6 +24,11 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ The EventTableViewCell is a custom cell for a Event consisting of an title, date, and image.
+ 
+ @version 1.0
+ */
 @interface EventTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) IBOutlet UILabel *eventTitle;

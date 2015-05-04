@@ -24,8 +24,13 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ The AddEventViewController class provides the ability for the user to add 
+ a specific Event.
+ 
+ @version 1.0
+ */
 @interface AddEventViewController : UIViewController
-
 
 @end
 

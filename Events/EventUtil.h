@@ -10,6 +10,15 @@
 
 @interface EventUtil : NSObject
 
+# pragma mark - Global variables
 extern NSMutableArray *globalEvents;
+
+# pragma mark - Global Constants
+extern NSString * const ADD_EVENT_IDENTIFIER;
+extern NSString * const APPLICATION_GROUP_IDENTIFIER;
+extern NSString * const EVENT_LIST;
+extern NSString * const GLOBAL_EVENTS;
+extern NSString * const GLOBAL_EVENT_LIST;
+extern NSString * const OPTIONAL_DIRECTORY;
 
 @end

@@ -26,8 +26,8 @@
     
     if (self)
     {
-        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.com.openSource" optionalDirectory:@"wormhole"];
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         globalEvents = events;
         
         [self listenToEvents];
@@ -65,8 +65,8 @@
 
 - (void)listenToEvents
 {
-    [self.wormhole listenForMessageWithIdentifier:@"globalEvents" listener:^(id messageObject) {
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:@"globalEvents"];
+    [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         globalEvents = events;
     }];
 }
@@ -104,26 +104,26 @@
 + (void)synchronizeEventList
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *encodedObject = [userDefaults objectForKey:@"GlobalEventList"];
+    NSData *encodedObject = [userDefaults objectForKey:GLOBAL_EVENT_LIST];
     globalEvents = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
     
     if (!globalEvents)
     {
         globalEvents = [[Event eventsList] mutableCopy];
         NSData *myEncodedObject = [NSKeyedArchiver archivedDataWithRootObject:globalEvents];
-        [userDefaults setObject:myEncodedObject forKey:@"GlobalEventList"];
+        [userDefaults setObject:myEncodedObject forKey:GLOBAL_EVENT_LIST];
         [userDefaults synchronize];
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"Add Event"])
+    if ([segue.identifier isEqualToString:ADD_EVENT_IDENTIFIER])
     {
         if ([segue.destinationViewController isKindOfClass:[AddEventViewController class]])
         {
             AddEventViewController *emvc = segue.destinationViewController;
-            [emvc setTitle:@"Add Event"];
+            [emvc setTitle:ADD_EVENT_IDENTIFIER];
         }
     }
 }

@@ -10,6 +10,15 @@
 
 @implementation EventUtil
 
+# pragma mark - Global Variables
 NSMutableArray *globalEvents = nil;
+
+# pragma mark - Global Constants
+NSString * const ADD_EVENT_IDENTIFIER = @"Add Event";
+NSString * const APPLICATION_GROUP_IDENTIFIER = @"group.com.openSource";
+NSString * const EVENT_LIST = @"EventList";
+NSString * const GLOBAL_EVENTS = @"globalEvents";
+NSString * const GLOBAL_EVENT_LIST = @"GlobalEventList";
+NSString * const OPTIONAL_DIRECTORY = @"wormhole";
 
 @end

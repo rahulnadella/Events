@@ -229,7 +229,10 @@
         
         if ([segueIdentifier isEqualToString:@"Event Details Important"])
         {
-            return event;
+            NSMutableArray *attachedEvents = [[NSMutableArray alloc] init];
+            [attachedEvents addObject:event];
+            [attachedEvents addObject:importantRow];
+            return attachedEvents;
         }
     }
     else

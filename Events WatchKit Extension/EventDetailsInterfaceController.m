@@ -23,12 +23,16 @@
  */
 
 #import "EventDetailsInterfaceController.h"
+#import "Event.h"
+#import "ImportantEventRow.h"
+#import "MMWormhole.h"
 
 @interface EventDetailsInterfaceController()
 
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *subTitle;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *eventImage;
+@property (nonatomic, strong) MMWormhole *wormhole;
 
 @end
 
@@ -40,13 +44,27 @@
 {
     [super awakeWithContext:context];
     
-    Event *event = (Event *)context;
-
+    /* Convert the Context to an Array */
+    NSMutableArray *attachedContext = (NSMutableArray *)context;
+    /* Obtain the first object (Event) from the Array */
+    Event *event = [attachedContext objectAtIndex:0];
+    /* Instantiate the APP_GROUP */
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER
+                                                         optionalDirectory:OPTIONAL_DIRECTORY];
+    
     if (event.eventImageName)
     {
         [self.titleLabel setText:event.eventTitle];
         [self.subTitle setText:event.eventTime];
-        [self.eventImage setImage:[UIImage imageNamed:event.eventImageName]];
+        
+        /* Set the appropriate image based on the APP_GROUP */
+        if (event.eventImageName)
+        {
+            /* Retrieve the Image in the APP_GROUP */
+            UIImageView *eventImage = [self.wormhole messageWithIdentifier:event.eventImageName];
+            /* Decipher if the Image is in the APP_GROUP if so set it otherwise create an new Image */
+            eventImage ? [self.eventImage setImage:eventImage.image] : [self.eventImage setImage:[UIImage imageNamed:event.eventImageName]];
+        }
     }
     else
     {

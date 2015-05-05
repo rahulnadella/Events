@@ -128,9 +128,35 @@
         }
     }
     
-    [self.eventImage setImage:[UIImage imageNamed:closestEvent.eventImageName]];
     [self.eventTitle setText:closestEvent.eventTitle];
     [self.eventSubTitle setText:closestEvent.eventTime];
+    if (closestEvent.eventImageName)
+    {
+        UIImage *retrievedEventImage = [self retrieveEventImageWithTitle:closestEvent.eventTitle andImageName:closestEvent.eventImageName];
+        [self.eventImage setImage:retrievedEventImage];
+    }
+    
+}
+
+# pragma mark - Retrieve Event Image Associated to Title, Image Name, and Row Type
+
+- (UIImage *)retrieveEventImageWithTitle:(NSString *)title
+                             andImageName:(NSString *)imageName
+{
+    UIImage *retrievedEventImage = nil;
+    NSString *fileName = [title.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
+    /* Retrieve the Image from the APP_GROUP */
+    UIImageView *eventImageView = [self.wormhole messageWithIdentifier:fileName];
+    if (eventImageView)
+    {
+        retrievedEventImage = eventImageView.image;
+    }
+    else
+    {
+        /* Images may have been loaded through a PLIST file */
+        retrievedEventImage = [UIImage imageNamed:imageName];
+    }
+    return retrievedEventImage;
 }
 
 @end

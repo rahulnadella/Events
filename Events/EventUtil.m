@@ -17,11 +17,14 @@ NSMutableArray *globalEvents = nil;
 NSString * const ADD_EVENT_IDENTIFIER = @"Add Event";
 NSString * const APPLICATION_GROUP_IDENTIFIER = @"group.com.openSource";
 NSString * const EVENT_LIST = @"EventList";
+NSString * const FILE_EXTENSION_SAVED = @"SAVED";
 NSString * const GLOBAL_EVENTS = @"globalEvents";
 NSString * const GLOBAL_EVENT_LIST = @"GlobalEventList";
 NSString * const IMAGE_EXTENSION = @".jpg";
 NSString * const IMPORTANT_EVENT_ROW = @"ImportantEventRow";
 NSString * const OPTIONAL_DIRECTORY = @"wormhole";
 NSString * const ORDINARY_EVENT_ROW = @"OrdinaryEventRow";
+NSString * const SAVED = @"TRUE";
+
 
 @end

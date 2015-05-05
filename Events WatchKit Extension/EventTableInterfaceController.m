@@ -143,16 +143,19 @@
             [importantRow.titleLabel setText:event.eventTitle];
             [importantRow.timeLabel setText:event.eventTime];
 
-            NSString *fileSaved = [event.eventTitle.lowercaseString stringByAppendingString:@"SAVED"];
+            NSString *fileSaved = [event.eventTitle.lowercaseString stringByAppendingString:FILE_EXTENSION_SAVED];
             /* Verify that the Image contains an Extension */
             NSString *isSaved = [self.wormhole messageWithIdentifier:fileSaved];
-            if (![isSaved isEqualToString:@"TRUE"])
+            
+            /* Check to see if the Image has been cached or not */
+            if (![isSaved isEqualToString:SAVED])
             {
-                /* Retrieve the Image from the APP_GROUP */
+                /* Save the Image from the APP_GROUP */
                 [self synchronizeEventImageWithTitle:event.eventTitle andImageName:event.eventImageName andRowType:importantRow];
             }
             else
             {
+                /* Retrieve the Image from the APP_GROUP */
                 [self retrieveEventImageWithTitle:event.eventTitle andImageName:event.eventImageName andRowType:importantRow];
             }
         }
@@ -172,7 +175,7 @@
                             andRowType:(ImportantEventRow *)importantEventRow
 {
     NSString *fileName = [title.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
-    NSString *fileSaved = [title.lowercaseString stringByAppendingString:@"SAVED"];
+    NSString *fileSaved = [title.lowercaseString stringByAppendingString:FILE_EXTENSION_SAVED];
     /* Retrieve the Image from the APP_GROUP */
     self.eventImage = [self.wormhole messageWithIdentifier:fileName];
     if (self.eventImage)
@@ -183,7 +186,7 @@
                 /* Synchronize the Image to the WatchKit device */
                 [[WKInterfaceDevice currentDevice] addCachedImage:self.eventImage.image name:fileName];
                 [importantEventRow.eventImage setImage:self.eventImage.image];
-                [self.wormhole passMessageObject:@"TRUE" identifier:fileSaved];
+                [self.wormhole passMessageObject:SAVED identifier:fileSaved];
             });
         });
     }

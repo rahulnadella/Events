@@ -292,11 +292,11 @@
 			children = (
 				FC67DE631AF67D0200F919CB /* Controller */,
 				FCCDDDB61AF52585001B6967 /* Custom Cell */,
-				FC67DE621AF67CBB00F919CB /* Model */,
-				FCCDDDBA1AF53625001B6967 /* Style */,
-				FCCAD6B31AF00CD400747332 /* Main.storyboard */,
 				FCCAD6B61AF00CD400747332 /* Images.xcassets */,
 				FCCAD6B81AF00CD400747332 /* LaunchScreen.xib */,
+				FCCAD6B31AF00CD400747332 /* Main.storyboard */,
+				FC67DE621AF67CBB00F919CB /* Model */,
+				FCCDDDBA1AF53625001B6967 /* Style */,
 				FCCAD6A91AF00CD400747332 /* Supporting Files */,
 			);
 			path = Events;

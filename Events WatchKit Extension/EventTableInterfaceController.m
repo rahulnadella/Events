@@ -84,9 +84,9 @@
     [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
         NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
-        
-        [self setupTable];
     }];
+    
+    [self setupTable];
 }
 
 # pragma mark - Deactivate
@@ -133,12 +133,17 @@
             [importantRow.titleLabel setText:event.eventTitle];
             [importantRow.timeLabel setText:event.eventTime];
 
+            NSString *fileSaved = [event.eventTitle.lowercaseString stringByAppendingString:@"SAVED"];
             /* Verify that the Image contains an Extension */
-            if ([event.eventImageName containsString:IMAGE_EXTENSION])
+            NSString *isSaved = [self.wormhole messageWithIdentifier:fileSaved];
+            if (![isSaved isEqualToString:@"TRUE"])
             {
                 /* Retrieve the Image from the APP_GROUP */
-                [self synchronizeEventImageWithTitle:event.eventTitle andImageName:event.eventImageName];
-                [importantRow.eventImage setImage:self.eventImage.image];
+                [self synchronizeEventImageWithTitle:event.eventTitle andImageName:event.eventImageName andRowType:importantRow];
+            }
+            else
+            {
+                [self retrieveEventImageWithTitle:event.eventTitle andImageName:event.eventImageName andRowType:importantRow];
             }
         }
         else
@@ -154,21 +159,51 @@
 
 - (void)synchronizeEventImageWithTitle:(NSString *)title
                           andImageName:(NSString *)imageName
+                            andRowType:(ImportantEventRow *)importantEventRow
+{
+    NSString *fileName = [title.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
+    NSString *fileSaved = [title.lowercaseString stringByAppendingString:@"SAVED"];
+    /* Retrieve the Image from the APP_GROUP */
+    self.eventImage = [self.wormhole messageWithIdentifier:fileName];
+    if (self.eventImage)
+    {
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^(void){
+            //Background Thread
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                /* Synchronize the Image to the WatchKit device */
+                [[WKInterfaceDevice currentDevice] addCachedImage:self.eventImage.image name:fileName];
+                [importantEventRow.eventImage setImage:self.eventImage.image];
+                [self.wormhole passMessageObject:@"TRUE" identifier:fileSaved];
+            });
+        });
+    }
+    else
+    {
+        /* Images may have been loaded through a PLIST file */
+        self.eventImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        [importantEventRow.eventImage setImage:self.eventImage.image];
+    }
+}
+
+- (NSString *)retrieveEventImageWithTitle:(NSString *)title
+                       andImageName:(NSString *)imageName
+                         andRowType:(ImportantEventRow *)importantEventRow
 {
     NSString *fileName = [title.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
     /* Retrieve the Image from the APP_GROUP */
     self.eventImage = [self.wormhole messageWithIdentifier:fileName];
     if (self.eventImage)
     {
-        /* Synchronize the Image to the WatchKit device */
-        WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
-        [device addCachedImage:self.eventImage.image name:fileName];
+        [importantEventRow.eventImage setImage:self.eventImage.image];
+        imageName = fileName;
     }
     else
     {
         /* Images may have been loaded through a PLIST file */
         self.eventImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        [importantEventRow.eventImage setImage:self.eventImage.image];
     }
+    return imageName;
 }
 
 # pragma mark - Prepare Segue
@@ -182,9 +217,15 @@
     if ([row isKindOfClass:[ImportantEventRow class]])
     {
         ImportantEventRow *importantRow = (ImportantEventRow *) row;
-        [importantRow.eventImage setImage:self.eventImage.image];
         [importantRow.titleLabel setText:event.eventTitle];
         [importantRow.timeLabel setText:event.eventTime];
+        if (event.eventImageName)
+        {
+           NSString *fileName = [self retrieveEventImageWithTitle:event.eventTitle
+                                    andImageName:event.eventImageName
+                                      andRowType:importantRow];
+            [event setEventImageName:fileName];
+        }
         
         if ([segueIdentifier isEqualToString:@"Event Details Important"])
         {

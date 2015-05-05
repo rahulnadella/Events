@@ -96,6 +96,9 @@
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
     
+    self.eventImage.image = nil;
+    self.eventImage = nil;
+    
     [self.wormhole stopListeningForMessageWithIdentifier:GLOBAL_EVENTS];
 }
 
@@ -130,8 +133,10 @@
             [importantRow.titleLabel setText:event.eventTitle];
             [importantRow.timeLabel setText:event.eventTime];
 
+            /* Verify that the Image contains an Extension */
             if ([event.eventImageName containsString:IMAGE_EXTENSION])
             {
+                /* Retrieve the Image from the APP_GROUP */
                 [self synchronizeEventImageWithTitle:event.eventTitle andImageName:event.eventImageName];
                 [importantRow.eventImage setImage:self.eventImage.image];
             }
@@ -145,18 +150,23 @@
     }
 }
 
+# pragma mark - Synchronize Event Image
+
 - (void)synchronizeEventImageWithTitle:(NSString *)title
                           andImageName:(NSString *)imageName
 {
     NSString *fileName = [title.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
+    /* Retrieve the Image from the APP_GROUP */
     self.eventImage = [self.wormhole messageWithIdentifier:fileName];
     if (self.eventImage)
     {
+        /* Synchronize the Image to the WatchKit device */
         WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
         [device addCachedImage:self.eventImage.image name:fileName];
     }
     else
     {
+        /* Images may have been loaded through a PLIST file */
         self.eventImage.image = [UIImage imageNamed:imageName];
     }
 }

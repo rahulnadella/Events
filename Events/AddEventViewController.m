@@ -32,7 +32,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateLabel;
 @property (nonatomic, strong) MMWormhole *wormhole;
 @property (weak, nonatomic) IBOutlet UIImageView *eventImage;
-@property (nonatomic, strong) NSString *imageDestinationName;
 @property (nonatomic, strong) NSString *imageFileName;
 
 @end
@@ -84,6 +83,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+# pragma mark - Select Image
+
 - (IBAction)selectImage:(id)sender
 {
     if (self.titleLabel.text)
@@ -94,6 +95,8 @@
         [self presentViewController:imagePicker animated:YES completion:nil];
     }
 }
+
+# pragma mark - UIImagePicker Delegate
 
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {

@@ -123,15 +123,15 @@
     Event *currentEvent = globalEvents[indexPath.row];
     eventCell.eventTitle.text = currentEvent.eventTitle;
     eventCell.eventSubTitle.text = currentEvent.eventTime;
+    /* Verify that Event contains an Image */
     if ([currentEvent.eventImageName containsString:IMAGE_EXTENSION])
     {
+        /* Create the File Name that was added to the APP_GROUP */
         NSString *fileName = [currentEvent.eventTitle.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
+        /* Retrieve the UIImageView from the APP_GROUP based on the File Name */
         self.eventImageView = [self.wormhole messageWithIdentifier:fileName];
+        /* Set the Image to the specific Event */
         eventCell.eventImage.image = self.eventImageView ? self.eventImageView.image : [UIImage imageNamed:currentEvent.eventImageName];
-    }
-    else
-    {
-        eventCell.eventImage.image = [UIImage imageNamed:currentEvent.eventImageName];
     }
     
     /* Change the selection style color of the CategoryCell */

@@ -52,14 +52,15 @@
     
     if (self)
     {
-        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
+        /* Create the connection between the iOS App and extension using the APP_GROUP */
+        self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER
+                                                             optionalDirectory:OPTIONAL_DIRECTORY];
+        /* Retrieve the Global Events from the iOS App */
         NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
         
-        [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
-            NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
-            _eventsData = events;
-        }];
+        /* Check to see if the Event list has changed */
+        [self listenToEvents];
     }
     return self;
 }
@@ -81,11 +82,10 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     
-    [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
-        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
-        _eventsData = events;
-    }];
+    /* Check to see if the Event list has changed */
+    [self listenToEvents];
     
+    /* Refresh the Table View */
     [self setupTable];
 }
 
@@ -100,6 +100,16 @@
     self.eventImage = nil;
     
     [self.wormhole stopListeningForMessageWithIdentifier:GLOBAL_EVENTS];
+}
+
+# pragma mark - Listen to Events
+
+- (void)listenToEvents
+{
+    [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
+        NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
+        _eventsData = events;
+    }];
 }
 
 # pragma mark - Initialize TableView
@@ -155,7 +165,7 @@
     }
 }
 
-# pragma mark - Synchronize Event Image
+# pragma mark - Synchronize Event Image Associated to Title, Image Name, and Row Type
 
 - (void)synchronizeEventImageWithTitle:(NSString *)title
                           andImageName:(NSString *)imageName
@@ -184,6 +194,8 @@
         [importantEventRow.eventImage setImage:self.eventImage.image];
     }
 }
+
+# pragma mark - Retrieve Event Image Associated to Title, Image Name, and Row Type
 
 - (NSString *)retrieveEventImageWithTitle:(NSString *)title
                        andImageName:(NSString *)imageName

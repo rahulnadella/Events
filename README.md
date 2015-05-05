@@ -1,7 +1,5 @@
 # Events
-A sample iOS app using WatchKit
-
-###Overview
+A sample app demonstrating how to share data between an app an its Watch extension using [MMWormhole](https://github.com/mutualmobile/MMWormhole).
 
 #####Note
 
@@ -13,8 +11,6 @@ A sample iOS app using WatchKit
 
 #####Libraries
 >Master -> [MMWormhole](https://github.com/mutualmobile/MMWormhole)
-
-###Usage
 
 ###License
 

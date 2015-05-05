@@ -190,7 +190,6 @@
         {
             return event;
         }
-        
     }
     else
     {

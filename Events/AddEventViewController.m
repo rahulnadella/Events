@@ -26,11 +26,13 @@
 #import "Event.h"
 #import "MMWormhole.h"
 
-@interface AddEventViewController ()
+@interface AddEventViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *dateLabel;
 @property (nonatomic, strong) MMWormhole *wormhole;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImage;
+@property (nonatomic, strong) NSString *imageName;
 
 @end
 
@@ -42,6 +44,8 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.eventImage.image = nil;
+    self.eventImage = nil;
 }
 
 # pragma mark - View Lifecycle
@@ -62,6 +66,7 @@
     Event *event = [[Event alloc] init];
     [event setEventTitle:self.titleLabel.text];
     [event setEventTime:self.dateLabel.text];
+    [event setEventImageName:self.imageName];
     
     [globalEvents addObject:event];
     
@@ -77,5 +82,51 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)selectImage:(id)sender
+{
+    if (self.titleLabel.text)
+    {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [imagePicker setDelegate:self];
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSError *error;
+    
+    // Access the uncropped image from info dictionary
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.eventImage.image = image;
+    NSString *eventImageName = [self.titleLabel.text.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
+    NSString *finalDirectoryPath = [@"Documents/" stringByAppendingString:eventImageName];
+    // Create paths to output images
+    self.imageName = [NSHomeDirectory() stringByAppendingPathComponent:finalDirectoryPath];
+    
+    // Write a UIImage to JPEG with minimum compression (best quality)
+    // The value 'image' must be a UIImage object
+    // The value '1.0' represents image compression quality as value from 0.0 to 1.0
+    [UIImageJPEGRepresentation(image, 1.0) writeToFile:self.imageName atomically:YES];
+    
+    // Let's check to see if files were successfully written...
+    // You can try this when debugging on-device
+    
+    // Create file manager
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+#pragma unused(fileMgr)
+    // Point to Document directory
+    NSString *documentsDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+#pragma unused(documentsDirectory)
+    
+    // Write out the contents of home directory to console
+#if DEBUG
+    NSLog(@"Documents directory: %@", [fileMgr contentsOfDirectoryAtPath:documentsDirectory error:&error]);
+#endif
+    
+    // Dismiss the camera
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

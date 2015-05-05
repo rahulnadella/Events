@@ -225,6 +225,7 @@
 
 - (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier inTable:(WKInterfaceTable *)table rowIndex:(NSInteger)rowIndex
 {
+    NSMutableArray *attachedEvents = [[NSMutableArray alloc] init];
     /* Retrieve the current Event being selected by the user */
     NSObject *row = [self.tableView rowControllerAtIndex:rowIndex];
     Event *event = _eventsData[rowIndex];
@@ -244,7 +245,6 @@
         
         if ([segueIdentifier isEqualToString:@"Event Details Important"])
         {
-            NSMutableArray *attachedEvents = [[NSMutableArray alloc] init];
             [attachedEvents addObject:event];
             [attachedEvents addObject:importantRow];
             return attachedEvents;
@@ -258,7 +258,9 @@
         
         if ([segueIdentifier isEqualToString:@"Event Details Ordinary"])
         {
-            return event;
+            [attachedEvents addObject:event];
+            [attachedEvents addObject:ordinaryRow];
+            return attachedEvents;
         }
     }
     

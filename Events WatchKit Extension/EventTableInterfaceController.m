@@ -56,11 +56,6 @@
         NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
         
-        self.eventImage = [self.wormhole messageWithIdentifier:@"EventImage"];
-        self.eventImageName = [self.wormhole messageWithIdentifier:@"EventImageName"];
-        WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
-        [device addCachedImage:self.eventImage.image name:self.eventImageName];
-        
         [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
             NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
             _eventsData = events;
@@ -89,11 +84,6 @@
     [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
         NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
-        
-        self.eventImage = [self.wormhole messageWithIdentifier:@"EventImage"];
-        self.eventImageName = [self.wormhole messageWithIdentifier:@"EventImageName"];
-        WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
-        [device addCachedImage:self.eventImage.image name:self.eventImageName];
         
         [self setupTable];
     }];
@@ -139,7 +129,12 @@
             ImportantEventRow *importantRow = (ImportantEventRow *) row;
             [importantRow.titleLabel setText:event.eventTitle];
             [importantRow.timeLabel setText:event.eventTime];
-            [importantRow.eventImage setImage:self.eventImage.image];
+
+            if ([event.eventImageName containsString:IMAGE_EXTENSION])
+            {
+                [self synchronizeEventImageWithTitle:event.eventTitle andImageName:event.eventImageName];
+                [importantRow.eventImage setImage:self.eventImage.image];
+            }
         }
         else
         {
@@ -147,6 +142,22 @@
             [ordinaryRow.titleLabel setText:event.eventTitle];
             [ordinaryRow.timeLabel setText:event.eventTime];
         }
+    }
+}
+
+- (void)synchronizeEventImageWithTitle:(NSString *)title
+                          andImageName:(NSString *)imageName
+{
+    NSString *fileName = [title.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
+    self.eventImage = [self.wormhole messageWithIdentifier:fileName];
+    if (self.eventImage)
+    {
+        WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
+        [device addCachedImage:self.eventImage.image name:fileName];
+    }
+    else
+    {
+        self.eventImage.image = [UIImage imageNamed:imageName];
     }
 }
 

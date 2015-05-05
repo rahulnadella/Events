@@ -80,7 +80,6 @@
     
     [self.wormhole passMessageObject:globalEvents identifier:GLOBAL_EVENTS];
     [self.wormhole passMessageObject:self.eventImage identifier:self.imageFileName];
-    [self.wormhole passMessageObject:self.imageFileName identifier:@"EventImageName"];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

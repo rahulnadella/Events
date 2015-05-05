@@ -33,6 +33,7 @@
 
 @property (nonatomic, strong) Event *event;
 @property (nonatomic, strong) MMWormhole *wormhole;
+@property (nonatomic, strong) UIImageView *eventImageView;
 
 @end
 
@@ -49,7 +50,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 # pragma mark - Initialization (Constructor)
 
@@ -123,7 +123,16 @@
     Event *currentEvent = globalEvents[indexPath.row];
     eventCell.eventTitle.text = currentEvent.eventTitle;
     eventCell.eventSubTitle.text = currentEvent.eventTime;
-    eventCell.eventImage.image = [UIImage imageNamed:currentEvent.eventImageName];
+    if ([currentEvent.eventImageName containsString:IMAGE_EXTENSION])
+    {
+        NSString *fileName = [currentEvent.eventTitle.lowercaseString stringByAppendingString:IMAGE_EXTENSION];
+        self.eventImageView = [self.wormhole messageWithIdentifier:fileName];
+        eventCell.eventImage.image = self.eventImageView ? self.eventImageView.image : [UIImage imageNamed:currentEvent.eventImageName];
+    }
+    else
+    {
+        eventCell.eventImage.image = [UIImage imageNamed:currentEvent.eventImageName];
+    }
     
     /* Change the selection style color of the CategoryCell */
     UIView *bgColorView = [[UIView alloc] init];

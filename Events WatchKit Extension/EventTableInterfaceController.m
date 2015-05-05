@@ -33,6 +33,8 @@
 
 @property (nonatomic, strong) NSArray *eventsData;
 @property (nonatomic, strong) MMWormhole *wormhole;
+@property (nonatomic, strong) UIImageView *eventImage;
+@property (nonatomic, strong) NSString *eventImageName;
 
 @end
 
@@ -53,6 +55,11 @@
         self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:APPLICATION_GROUP_IDENTIFIER optionalDirectory:OPTIONAL_DIRECTORY];
         NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
+        
+        self.eventImage = [self.wormhole messageWithIdentifier:@"EventImage"];
+        self.eventImageName = [self.wormhole messageWithIdentifier:@"EventImageName"];
+        WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
+        [device addCachedImage:self.eventImage.image name:self.eventImageName];
         
         [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
             NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
@@ -82,6 +89,12 @@
     [self.wormhole listenForMessageWithIdentifier:GLOBAL_EVENTS listener:^(id messageObject) {
         NSMutableArray *events = [self.wormhole messageWithIdentifier:GLOBAL_EVENTS];
         _eventsData = events;
+        
+        self.eventImage = [self.wormhole messageWithIdentifier:@"EventImage"];
+        self.eventImageName = [self.wormhole messageWithIdentifier:@"EventImageName"];
+        WKInterfaceDevice *device = [WKInterfaceDevice currentDevice];
+        [device addCachedImage:self.eventImage.image name:self.eventImageName];
+        
         [self setupTable];
     }];
 }
@@ -124,9 +137,9 @@
         if ([row isKindOfClass:[ImportantEventRow class]])
         {
             ImportantEventRow *importantRow = (ImportantEventRow *) row;
-            [importantRow.eventImage setImage:[UIImage imageNamed:event.eventImageName]];
             [importantRow.titleLabel setText:event.eventTitle];
             [importantRow.timeLabel setText:event.eventTime];
+            [importantRow.eventImage setImage:self.eventImage.image];
         }
         else
         {
@@ -148,7 +161,7 @@
     if ([row isKindOfClass:[ImportantEventRow class]])
     {
         ImportantEventRow *importantRow = (ImportantEventRow *) row;
-        [importantRow.eventImage setImage:[UIImage imageNamed:event.eventImageName]];
+        [importantRow.eventImage setImage:self.eventImage.image];
         [importantRow.titleLabel setText:event.eventTitle];
         [importantRow.timeLabel setText:event.eventTime];
         

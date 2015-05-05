@@ -120,7 +120,7 @@
         <!--Glance Interface Controller-->
         <scene sceneID="gsk-Vb-PCS">
             <objects>
-                <glanceController spacing="0.0" id="2Km-fh-gBs" customClass="GlanceController">
+                <glanceController spacing="0.0" id="2Km-fh-gBs" customClass="EventGlanceController">
                     <items>
                         <group alignment="left" layout="vertical" id="2BC-sN-lVk">
                             <items>

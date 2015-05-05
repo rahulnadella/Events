@@ -22,13 +22,13 @@
  THE SOFTWARE.
  */
 
-#import "GlanceController.h"
+#import "EventGlanceController.h"
 #import "Event.h"
 #import "ImportantEventRow.h"
 #import "MMWormhole.h"
 #import "OrdinaryEventRow.h"
 
-@interface GlanceController()
+@interface EventGlanceController()
 
 @property (nonatomic, strong) NSArray *eventsData;
 @property (weak, nonatomic) IBOutlet WKInterfaceImage *eventImage;
@@ -38,7 +38,7 @@
 
 @end
 
-@implementation GlanceController
+@implementation EventGlanceController
 
 # pragma mark - Initialization (Constructor)
 

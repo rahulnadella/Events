@@ -1,6 +1,18 @@
 # Events
 A sample app demonstrating how to share data between an app an its Watch extension using [MMWormhole](https://github.com/mutualmobile/MMWormhole).
 
+#####Note
+This project requires an Apple Developer provisioning profile to execute the output. The user must have his/her own App Groups directory.
+
+#####Version
+>Version 1.0 -> Design and Implementation of the Events project 
+
+#####Build
+>Master -> Only works on iOS 8.0 or greater
+
+#####Libraries
+>Master -> [MMWormhole](https://github.com/mutualmobile/MMWormhole)
+
 ###Screenshot
 
 The output of the Events iOS App and WatchKit Extension (Main Interface) for an Event (Ordinary):
@@ -14,18 +26,6 @@ The output of the Events iOS App and WatchKit Extension (Main Interface) for an 
 The output of the Events iOS App and WatchKit Extension (Glance) for the nearest approximate Event:
 
 <img src="https://github.com/rahulnadella/Events/blob/master/screenshots/event_glance.gif" alt="Glance" width="600" height="600" />
-
-#####Note
-This project requires an Apple Developer provisioning profile to execute the output. The user must have his/her own App Groups directory.
-
-#####Version
->Version 1.0 -> Design and Implementation of the Events project 
-
-#####Build
->Master -> Only works on iOS 8.0 or greater
-
-#####Libraries
->Master -> [MMWormhole](https://github.com/mutualmobile/MMWormhole)
 
 ###License
 

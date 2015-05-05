@@ -167,7 +167,7 @@
     else
     {
         /* Images may have been loaded through a PLIST file */
-        self.eventImage.image = [UIImage imageNamed:imageName];
+        self.eventImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     }
 }
 

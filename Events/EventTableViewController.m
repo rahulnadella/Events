@@ -218,6 +218,7 @@
     if (!globalEvents)
     {
         globalEvents = [[Event eventsList] mutableCopy];
+        [self.wormhole passMessageObject:globalEvents identifier:GLOBAL_EVENTS];
     }
 }
 
